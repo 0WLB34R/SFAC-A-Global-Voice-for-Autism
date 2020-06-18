@@ -21,7 +21,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".CommunityActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".EducationActivity"/>
+        <activity android:name=".VideoListActivity"/>
     </application>
 
 </manifest>
