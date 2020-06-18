@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void openNextScreen() {
        Intent MainIntent = new Intent(context, MainActivity.class);
-        MainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Que la carta se elimine
+        MainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(MainIntent);
     }
 
@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     Thread.sleep(1000);
                     updateProgress(99);
-                    //openNextScreen();
+                    openNextScreen();
                 } catch (InterruptedException ex) {
                     Log.e(LOG, "InterruptedException." + ex.getMessage());
                 }
