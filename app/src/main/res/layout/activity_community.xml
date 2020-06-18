@@ -15,8 +15,9 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@color/backgroundColor"
+        android:background="#E3F2D2"
         android:scaleType="fitCenter"
+        android:paddingBottom="10dp"
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
@@ -25,7 +26,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="fitCenter"
-        android:background="@color/backgroundColor"
+        android:background="#E3F2D2"
+        android:paddingBottom="10dp"
         app:srcCompat="@drawable/whatsapp" />
     <ImageButton
         android:id="@+id/zButton"
@@ -33,7 +35,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="fitCenter"
-        android:background="@color/backgroundColor"
+        android:background="#E3F2D2"
+        android:paddingBottom="10dp"
         app:srcCompat="@drawable/zoom" />
 
     <ImageButton
@@ -41,8 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/backgroundColor"
+        android:background="#E3F2D2"
         android:scaleType="fitCenter"
+        android:paddingBottom="10dp"
         app:srcCompat="@drawable/local_com" />
 
 
