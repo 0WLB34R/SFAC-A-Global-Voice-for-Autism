@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DFF5FF">
+        <RelativeLayout
+            android:id="@+id/logomatch"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            >
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+
+                app:srcCompat="@drawable/sfac_company_logo" />
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/footerCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/logomatch"
+            android:layout_marginStart="@dimen/space_md"
+            android:layout_marginTop="@dimen/space_md"
+            android:layout_marginEnd="@dimen/space_md"
+            android:layout_marginBottom="@dimen/space_md"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:contentPaddingRight="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_md">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/loading"
+                    android:textSize="22sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_above="@id/footerCardView"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/cropped_agvfanewlogo"
+            >
+
+        </ImageView>
+
+</RelativeLayout>
+</RelativeLayout>
