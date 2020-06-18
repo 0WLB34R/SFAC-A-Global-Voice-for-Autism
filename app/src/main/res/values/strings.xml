@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AGVFA</string>
     <string name="com_section">Community</string>
+    <string name="edu_section">Education</string>
 </resources>
