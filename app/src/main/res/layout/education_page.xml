@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="50"
+        android:background="@drawable/style_form"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Activities"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#606060"
+            />
+
+        <ImageButton
+            android:id="@+id/activitiesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:paddingTop="30dp"
+            app:srcCompat="@drawable/activities"
+            android:background="@drawable/style_form_b"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:background="@drawable/style_form"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Worksheet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#606060"
+            />
+        <ImageButton
+            android:id="@+id/worksheetButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:paddingTop="30dp"
+            app:srcCompat="@drawable/worksheet"
+            android:background="@drawable/style_form_b"/>
+
+
+    </LinearLayout>
+</LinearLayout>
