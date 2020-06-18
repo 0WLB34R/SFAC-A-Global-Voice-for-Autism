@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFF5FF">
+    <ImageView
+        android:id="@+id/whoweareimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="15dp"
+        app:srcCompat="@drawable/whoweare" />
+    <TextView
+        android:id="@+id/whoweare"
+        android:layout_below="@id/whoweareimg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:text="A Global Voice for Autism brings together teams of autism professionals, trauma specialists and local community experts to train key community stakeholders in the skills to support and include autistic children and children whose lives have been impacted by trauma in their communities. Because we have seen that trainees learn most effectively when they are also receiving the emotional and intellectual support they need, all of our programs are coupled with parent and sibling support and self-development, community education and awareness programming and inclusion advocacy training for relevant local stakeholders. groups and teacher support groups, as well as with community education sessions. Using culturally sensitive, evidence-based materials designed for limited resource communities, A Global Voice for Autism disseminates techniques, networks and information that benefit autistic children and their communities for years to come."/>
+    <ImageView
+        android:id="@+id/foundingstimg"
+        android:layout_below="@id/whoweare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:srcCompat="@drawable/foundingst" />
+    <TextView
+        android:id="@+id/foundingst"
+        android:layout_below="@id/foundingstimg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:text="In 2012, our founder, Melissa Diamond, met the mother of a newly-diagnosed autistic child. After learning about her daughter’s diagnosis, the mother planned to return home and hide her daughter at in her home in order to avoid the autism stigma in her community. Diamond has an autistic loved one in the U.S. who is autistic and non-verbal and was struck by how different her friend’s life might have been if she had simply been born somewhere else. A Global Voice for Autism was founded on the principle that ALL autistic children should have access to education, community and support, no matter where they live."/>
+
+
+</RelativeLayout>
