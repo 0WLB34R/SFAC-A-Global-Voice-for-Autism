@@ -20,5 +20,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void gotoEducation(View view){
+        Intent intent = new Intent(this, EducationActivity.class);
+        startActivity(intent);
+
+    }
 
 }
