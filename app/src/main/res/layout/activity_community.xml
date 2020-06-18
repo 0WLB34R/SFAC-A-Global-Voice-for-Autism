@@ -35,15 +35,15 @@
         android:scaleType="fitCenter"
         android:background="@color/backgroundColor"
         app:srcCompat="@drawable/zoom" />
+
     <ImageButton
         android:id="@+id/loButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:scaleType="fitCenter"
         android:background="@color/backgroundColor"
-        app:srcCompat="@drawable/local_com"
-        />
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/local_com" />
 
 
 </LinearLayout>
