@@ -30,11 +30,11 @@ public class SplashActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
     }
 
-   // private void openNextScreen() {
-     //   Intent loginIntent = new Intent(context, LoginActivity.class);
-       // loginIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Que la carta se elimine
-        //startActivity(loginIntent);
-    //}
+    private void openNextScreen() {
+       Intent MainIntent = new Intent(context, MainActivity.class);
+        MainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Que la carta se elimine
+        startActivity(MainIntent);
+    }
 
     private void simulateLoading() {
         new Thread(new Runnable() {
