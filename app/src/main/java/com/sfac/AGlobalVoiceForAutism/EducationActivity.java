@@ -8,7 +8,7 @@ public class EducationActivity extends AppCompatActivity {
  @Override
  protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
-     setContentView(R.layout.education_page);
+     setContentView(R.layout.activity_education);
      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
      getSupportActionBar().setTitle(R.string.edu_section);
  }
