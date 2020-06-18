@@ -50,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
                     Thread.sleep(300);
                     updateProgress(60);
 
-                    Thread.sleep(300);
+                    Thread.sleep(250);
                     updateProgress(70);
 
                     Thread.sleep(1100);
