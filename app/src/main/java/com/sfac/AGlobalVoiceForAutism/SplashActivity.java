@@ -41,20 +41,19 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    //Esperamos y actualizamos
-                    Thread.sleep(500);
+                    Thread.sleep(300);
                     updateProgress(20);
 
-                    Thread.sleep(500);
+                    Thread.sleep(300);
                     updateProgress(40);
 
-                    Thread.sleep(500);
+                    Thread.sleep(300);
                     updateProgress(60);
 
-                    Thread.sleep(500);
-                    updateProgress(80);
+                    Thread.sleep(300);
+                    updateProgress(70);
 
-                    Thread.sleep(1000);
+                    Thread.sleep(1100);
                     updateProgress(99);
                     openNextScreen();
                 } catch (InterruptedException ex) {
