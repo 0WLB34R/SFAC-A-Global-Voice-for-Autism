@@ -26,19 +26,21 @@
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:orientation="horizontal">
-        <ImageView
+        <ImageButton
             android:id="@+id/education_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
             android:padding="5dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/education_button" />
-        <ImageView
+        <ImageButton
             android:id="@+id/support_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
             android:padding="5dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/support_button" />
     </LinearLayout>
     <LinearLayout
@@ -48,19 +50,21 @@
         android:layout_height="300dp"
         android:orientation="horizontal"
         android:layout_below="@+id/buttons1">
-        <ImageView
+        <ImageButton
             android:id="@+id/community"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
             android:padding="5dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/community_button" />
-        <ImageView
+        <ImageButton
             android:id="@+id/about_us_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
             android:padding="5dp"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/about_us_button" />
     </LinearLayout>
 </RelativeLayout>
