@@ -3,4 +3,5 @@
     <string name="app_name">AGVFA</string>
     <string name="com_section">الجماعة</string>
     <string name="edu_section">altaelim</string>
+    <string name="loading">تحميل</string>
 </resources>

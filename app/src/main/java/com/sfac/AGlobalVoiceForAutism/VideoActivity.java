@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,8 +26,8 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     StorageReference sRef;
     StorageReference ref;
     YouTubePlayerView playerView;
-    String filename = "OWLBEAR0-0.jpg";
-    String videoId = "4MKAf6YX_7M";
+    String filename = "Elmo.jpg";
+    String videoId = "MeO8VIx-jXA";
 
 
     @Override
@@ -137,7 +139,14 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         DownloadManager.Request request = new DownloadManager.Request(uri);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName+fileExtension);
-
+        Toast.makeText(this, "Video downloaded to My Files",
+                Toast.LENGTH_LONG).show();
         downloadManager.enqueue(request);
+    }
+
+    public void gotoVideoList(View view){
+        Intent intent = new Intent(this,VideoListActivity.class);
+        startActivity(intent);
+
     }
 }
