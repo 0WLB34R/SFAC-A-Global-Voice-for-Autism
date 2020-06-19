@@ -3,4 +3,8 @@
     <string name="loading">loading</string>
     <string name="com_section">Community</string>
     <string name="edu_section">Education</string>
+    <string name="lesson_section">Lesson #</string>
+    <string name="video_section">Play video</string>
+    <string name="quiz_section">Quiz section</string>
+    <string name="videos">Videos</string>
 </resources>
