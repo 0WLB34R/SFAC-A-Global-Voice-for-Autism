@@ -23,7 +23,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".VideoListActivity"/>
         <activity android:name=".VideoActivity"/>
-
+        <activity android:name=".QuizActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
