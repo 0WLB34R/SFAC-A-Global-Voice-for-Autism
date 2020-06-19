@@ -5,7 +5,7 @@
     <string name="edu_section">Education</string>
     <string name="lesson_section">Lesson #</string>
     <string name="video_section">Play video</string>
-    <string name="quiz_section">Quiz section</string>
+    <string name="quiz">Quiz</string>
     <string name="videos">Videos</string>
     <string name="_100_100">100/100</string>
 </resources>
