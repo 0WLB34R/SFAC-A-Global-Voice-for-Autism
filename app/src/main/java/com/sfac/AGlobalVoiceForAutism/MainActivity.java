@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoCommunity(View view){
-        Intent intent = new Intent(this, CommunityActivity.class);
+        Intent intent = new Intent(this,VideoActivity.class);
         startActivity(intent);
 
     }

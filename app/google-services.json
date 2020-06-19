@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "682346515833",
+    "firebase_url": "https://agvfa-216ad.firebaseio.com",
+    "project_id": "agvfa-216ad",
+    "storage_bucket": "agvfa-216ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682346515833:android:4e3d177ac7bc1bc0ff33a8",
+        "android_client_info": {
+          "package_name": "com.sfac.AGlobalVoiceForAutism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682346515833-mrm016ao1228u31r7opdat8rd1onl06v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sfac.AGlobalVoiceForAutism",
+            "certificate_hash": "f5e3397a18e856bb8ae4547f50fa05b655afc7e2"
+          }
+        },
+        {
+          "client_id": "682346515833-a62k86rqqf9etj55jqaek21hl8nmqghk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeqKiAtwgHaxQqLgEUuf0poOvaXrL019k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682346515833-a62k86rqqf9etj55jqaek21hl8nmqghk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
