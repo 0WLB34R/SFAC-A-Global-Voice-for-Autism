@@ -28,6 +28,7 @@
         android:orientation="horizontal">
         <ImageButton
             android:id="@+id/education_button"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
@@ -36,6 +37,7 @@
             app:srcCompat="@drawable/education_button" />
         <ImageButton
             android:id="@+id/support_button"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
@@ -52,6 +54,7 @@
         android:layout_below="@+id/buttons1">
         <ImageButton
             android:id="@+id/community"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
@@ -60,6 +63,7 @@
             app:srcCompat="@drawable/community_button" />
         <ImageButton
             android:id="@+id/about_us_button"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="70"
