@@ -1,19 +1,31 @@
 package com.sfac.AGlobalVoiceForAutism.model;
 
-public class ActivitiesItem {
-    private int id;
-    private String Lessons;
-    private int icon_video;
+import com.google.gson.annotations.Expose;
 
-    public ActivitiesItem(int id,String Lessons, int icon_video) {
+public class ActivitiesItem {
+    @Expose
+    private String id;
+
+    @Expose
+    private String extention;
+
+    @Expose
+    private String name;
+
+    private int icon_video;
+    private String Lessons;
+
+    public ActivitiesItem(String id,String name,String extention,String Lessons, int icon_video) {
     this.id = id;
     this.Lessons = Lessons;
     this.icon_video = icon_video;
+    this.name = name;
+    this.extention = extention;
     }
 
-    public int getId() { return id; }
+    public String getId() { return id; }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(String id) { this.id = id; }
 
     public int getIcon_video() { return icon_video; }
 
@@ -22,4 +34,12 @@ public class ActivitiesItem {
     public String getLessons() { return Lessons; }
 
     public void setLessons(String lessons) { Lessons = lessons; }
+
+    public String getExtention() { return extention; }
+
+    public void setExtention(String extention) { this.extention = extention; }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
 }
