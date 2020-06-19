@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_xhdpi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity android:name=".VideoListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter>
@@ -21,8 +21,9 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".CommunityActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".VideoListActivity"/>
+
         <activity android:name=".VideoActivity"/>
+    <activity android:name=".SplashActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
