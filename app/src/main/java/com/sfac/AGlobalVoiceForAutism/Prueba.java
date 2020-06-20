@@ -24,7 +24,7 @@ public class Prueba extends AppCompatActivity {
             String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
             ActivitiesItem aI = new Gson().fromJson(userObj, ActivitiesItem.class);
             Toast.makeText(Prueba.this,
-                    "Bienvenid@: "+ aI.getId() + aI.getExtention()+aI.getName() ,
+                    aI.getId() +" "+aI.getExtention()+" "+aI.getName() ,
                     Toast.LENGTH_SHORT)
                     .show();
         }
