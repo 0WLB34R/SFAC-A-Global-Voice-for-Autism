@@ -43,7 +43,7 @@ public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<Activiti
            @Override
            public void onClick(View v) {
                if(callBack != null){
-                   callBack.onTaskClicked(activitiesItem);
+                   callBack.onTaskVideoClicked(activitiesItem);
                }
            }
        });
@@ -51,7 +51,7 @@ public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<Activiti
            @Override
            public void onClick(View v) {
                if(callBack != null){
-                     callBack.onTaskClicked(activitiesItem);
+                     callBack.onTaskQuizClicked(activitiesItem);
                }
            }
        });

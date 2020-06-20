@@ -47,20 +47,18 @@ public class VideoListActivity extends AppCompatActivity {
 
         adapter.setCallBack(new PlayVideoCallBack() {
            @Override
-           public void onTaskClicked(ActivitiesItem task) {
-              Log.e("OnTaskClicked", task.getLessons()+"Play_video");
+           public void onTaskVideoClicked(ActivitiesItem task) {
+              Log.e("OnTaskVideoClicked", task.getLessons()+"Play_video");
               Intent videoIntent = new Intent(context, Prueba.class);
               String videoString = new Gson().toJson(task);
               videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
               startActivity(videoIntent);
            }
-       });
-       //adapter.setCallBack(new PlayVideoCallBack() {
-        //   @Override
-         //  public void onTaskClicked(ActivitiesItem task) {
-          //    Log.e("OnTaskClicked",task.getLessons()+"Quiz");
-           //}
-       //});
+           @Override
+            public void onTaskQuizClicked(ActivitiesItem task) {
+                Log.e("OnTaskClicked",task.getLessons()+"Quiz");
+            }
+        });
     }
     private void fillvideoList(){
        items.add(new ActivitiesItem("1","Video_1","dQw4w9WgXcQ",
