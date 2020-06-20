@@ -2,6 +2,8 @@ package com.sfac.AGlobalVoiceForAutism;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.GridLayout;
@@ -30,8 +32,6 @@ public class VideoListActivity extends AppCompatActivity {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_video_list);
      context = this;
-     //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-     //getSupportActionBar().setTitle(R.string.edu_section);
      initviews();
      addEvents();
      fillvideoList();
