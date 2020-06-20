@@ -1,22 +1,34 @@
 package com.sfac.AGlobalVoiceForAutism;
 
+import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.annotation.NonNull;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import static android.os.Environment.DIRECTORY_PICTURES;
 
 
 public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener, YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener{
 
+    FirebaseStorage fireStorage;
+    StorageReference sRef;
+    StorageReference ref;
     YouTubePlayerView playerView;
-    String videoId = "4MKAf6YX_7M";
+    String filename = "Elmo.jpg";
+    String videoId = "MeO8VIx-jXA";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +110,42 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     public void gotoQuiz(View view){
         Intent intent = new Intent(this,CommunityActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void downloadVideo(View view){
+        sRef = fireStorage.getInstance().getReference();
+        ref = sRef.child(filename);
+
+        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                String name = filename.substring(0,filename.length()-4);
+                downloadFile(VideoActivity.this, name, ".jpg", DIRECTORY_PICTURES,url );
+            }
+        }) .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri= Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName+fileExtension);
+        Toast.makeText(this, "Video downloaded to My Files",
+                Toast.LENGTH_LONG).show();
+        downloadManager.enqueue(request);
+    }
+
+    public void gotoVideoList(View view){
+        Intent intent = new Intent(this,VideoListActivity.class);
         startActivity(intent);
 
     }
