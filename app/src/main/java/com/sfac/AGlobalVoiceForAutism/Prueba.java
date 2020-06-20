@@ -23,10 +23,10 @@ public class Prueba extends AppCompatActivity {
         if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
             String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
             ActivitiesItem aI = new Gson().fromJson(userObj, ActivitiesItem.class);
-            Toast.makeText(Prueba.this,
-                    aI.getId() +" "+aI.getExtention()+" "+aI.getName() ,
-                    Toast.LENGTH_SHORT)
-                    .show();
+           // Toast.makeText(Prueba.this,
+          //          aI.getId() +" "+aI.getExtention()+" "+aI.getName() ,
+            //        Toast.LENGTH_SHORT)
+             //       .show();
         }
     }
 }

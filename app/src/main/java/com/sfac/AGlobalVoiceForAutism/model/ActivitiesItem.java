@@ -35,7 +35,7 @@ public class ActivitiesItem {
 
     public void setLessons(String lessons) { Lessons = lessons; }
 
-    public String getExtention() { return extention; }
+    public String getExtension() { return extention; }
 
     public void setExtention(String extention) { this.extention = extention; }
 

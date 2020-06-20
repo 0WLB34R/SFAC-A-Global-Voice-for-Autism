@@ -17,6 +17,10 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.gson.Gson;
+import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
+import com.sfac.AGlobalVoiceForAutism.utils.Constants;
+
 import static android.os.Environment.DIRECTORY_PICTURES;
 
 
@@ -26,8 +30,10 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     StorageReference sRef;
     StorageReference ref;
     YouTubePlayerView playerView;
-    String filename = "Elmo.jpg";
-    String videoId = "MeO8VIx-jXA";
+    //String filename = "Elmo.jpg";
+    //String videoId = "MeO8VIx-jXA";
+    ActivitiesItem aI;
+
 
 
     @Override
@@ -36,6 +42,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         setContentView(R.layout.activity_video);
         playerView = (YouTubePlayerView)findViewById(R.id.ytplayerView);
         playerView.initialize(YouTubeConfig.getApiKey(),this);
+        receiveValues();
     }
 
     @Override
@@ -44,7 +51,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         youTubePlayer.setPlaybackEventListener(this);
 
         if(!b){
-            youTubePlayer.cueVideo(videoId);
+            youTubePlayer.cueVideo(aI.getId());
         }
     }
 
@@ -116,14 +123,14 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     public void downloadVideo(View view){
         sRef = fireStorage.getInstance().getReference();
-        ref = sRef.child(filename);
+        ref = sRef.child(aI.getName()+aI.getExtension());
 
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 String url = uri.toString();
-                String name = filename.substring(0,filename.length()-4);
-                downloadFile(VideoActivity.this, name, ".jpg", DIRECTORY_PICTURES,url );
+                //String name = filename.substring(0,filename.length()-4);
+                downloadFile(VideoActivity.this, aI.getName(), aI.getExtension(), DIRECTORY_PICTURES,url );
             }
         }) .addOnFailureListener(new OnFailureListener() {
             @Override
@@ -148,5 +155,17 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         Intent intent = new Intent(this,VideoListActivity.class);
         startActivity(intent);
 
+    }
+
+    private void receiveValues() {
+        Intent intent = getIntent();
+        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
+            aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+           // Toast.makeText(Prueba.this,
+                  //  aI.getId() +" "+aI.getExtention()+" "+aI.getName() ,
+                 //   Toast.LENGTH_SHORT)
+                 //   .show();
+        }
     }
 }
