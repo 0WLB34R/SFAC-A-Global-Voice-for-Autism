@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
         app:cardBackgroundColor="#9AD4D6"
-        app:cardElevation="1dp"
         app:cardUseCompatPadding="true">
 
 
@@ -29,7 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="55">
+        android:layout_weight="50">
 
         <ImageView
             android:id="@+id/iconImageView"
@@ -45,7 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_weight="45"
+        android:layout_weight="50"
         android:orientation="vertical">
         <TextView
             android:id="@+id/lesson"
