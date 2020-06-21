@@ -60,9 +60,9 @@
         <ImageButton
             android:id="@+id/community"
             android:background="#ffffff"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="70"
+            android:layout_weight="50"
             android:padding="5dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/community_button"
@@ -70,9 +70,9 @@
         <ImageButton
             android:id="@+id/about_us_button"
             android:background="#ffffff"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="70"
+            android:layout_weight="50"
             android:padding="5dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/about_us_button"
