@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +30,7 @@ public class QuizActivity  extends AppCompatActivity {
     private static final int FRAME_ID = 600;
     private  Quiz quiz;
     private int Score=0;
+    private int incorrectScore=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +55,10 @@ public class QuizActivity  extends AppCompatActivity {
         LinearLayout frameLinearLayout = new LinearLayout(context);
         frameLinearLayout.setOrientation(LinearLayout.VERTICAL);
 
+
         frameLinearLayout.setId(FRAME_ID);
         frameLinearLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+        frameLinearLayout.setGravity(LinearLayout.TEXT_ALIGNMENT_CENTER);
 
 
 
@@ -72,12 +76,14 @@ public class QuizActivity  extends AppCompatActivity {
             possibleAnswers.setOrientation(LinearLayout.VERTICAL);
 
 
+
             for(Answers  answers: questions.getAnswers()){
                 RadioButton answersRadioButton = new RadioButton(context);
                 answersRadioButton.setId(dynamicId);
                 answersRadioButton.setText(answers.getValue());
 
                 allButtons.add(answersRadioButton);
+
                 //radioButtons.add(answersRadioButton);
                 possibleAnswers.addView(answersRadioButton);
                 dynamicId++;
@@ -88,16 +94,22 @@ public class QuizActivity  extends AppCompatActivity {
                 public void onCheckedChanged(RadioGroup radioGroup, int id) {
                     Log.e("onCheckedChanged", "Id:" + id);
                     for(RadioButton radioButton: allButtons){
-                        if(radioButton.getId()==id){
+                        if(radioButton.getId()==id ) {
                             Log.e("onCheckedChanged", "Text: " + radioButton.getText());
+                            if (id == 0 || id == 5 || id == 10 || id == 15) {
 
                                 Score++;
-                                TextView scoreTextView = new TextView(context);
-                                scoreTextView.setTextSize(15);
-                                scoreTextView.setHeight(20);
 
-                                scoreTextView.setText("Score:" + Score);
 
+                                String succeed = "Number of correct answer is \t " + Score + "\n you are winning";
+                                Toast.makeText(getBaseContext(), succeed, Toast.LENGTH_LONG).show();
+                            } else {
+                                incorrectScore++;
+                                String failed = "Number of wrong answer is \t " + incorrectScore + "\n you are failing:(";
+
+                                Toast.makeText(getBaseContext(), failed, Toast.LENGTH_LONG).show();
+
+                            }
                         }
                     }
 
