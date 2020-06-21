@@ -75,9 +75,9 @@ public class VideoListActivity extends AppCompatActivity {
     }
     private void fillvideoList(){
        items.add(new ActivitiesItem("MeO8VIx-jXA","Elmo",".jpg",
-               "Lesson #1",R.drawable.activities));
+               "Lesson #1",R.drawable.elmo_1));
        items.add(new ActivitiesItem("vSYadh2xmcI","ElmoLittle",".jpg",
-               "Lesson #2",R.drawable.worksheet));
+               "Lesson #2",R.drawable.elmo_2));
        items.add(new ActivitiesItem("3","Video_3","",
                "Lesson #3",R.drawable.activities));
        items.add(new ActivitiesItem("4","Video_4","",
