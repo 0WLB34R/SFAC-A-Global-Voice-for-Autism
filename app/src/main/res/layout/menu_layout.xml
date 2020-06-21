@@ -22,60 +22,66 @@
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/agvfa" />
+
     <LinearLayout
-        android:paddingTop="10dp"
-        android:id="@+id/buttons1"
         android:layout_below="@id/top_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/education_button"
-            android:background="#ffffff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="70"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/education_button"
-            tools:ignore="VectorDrawableCompat" />
-        <ImageButton
-            android:id="@+id/support_button"
-            android:background="#ffffff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="70"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/support_button"
-            tools:ignore="VectorDrawableCompat" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingTop="10dp"
-        android:id="@+id/buttons2"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/buttons1">
-        <ImageButton
-            android:id="@+id/community"
-            android:background="#ffffff"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/community_button"
-            tools:ignore="VectorDrawableCompat" />
-        <ImageButton
-            android:id="@+id/about_us_button"
-            android:background="#ffffff"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/about_us_button"
-            tools:ignore="VectorDrawableCompat" />
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/buttons1"
+            android:layout_below="@id/top_menu"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/education_button"
+                android:background="#ffffff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/education_button"
+                tools:ignore="VectorDrawableCompat" />
+            <ImageButton
+                android:id="@+id/support_button"
+                android:background="#ffffff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/support_button"
+                tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/buttons2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/buttons1">
+            <ImageButton
+                android:id="@+id/community"
+                android:background="#ffffff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/community_button"
+                tools:ignore="VectorDrawableCompat" />
+            <ImageButton
+                android:id="@+id/about_us_button"
+                android:background="#ffffff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/about_us_button"
+                tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+    </LinearLayout >
 </RelativeLayout>
