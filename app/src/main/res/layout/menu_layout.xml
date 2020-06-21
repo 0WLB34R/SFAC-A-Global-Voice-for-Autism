@@ -2,9 +2,11 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffffff"
     >
 
 
@@ -12,7 +14,8 @@
         android:id="@+id/top_menu"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/top_menu" />
+        app:srcCompat="@drawable/top_menu"
+        tools:ignore="VectorDrawableCompat" />
     <ImageView
         android:id="@+id/top_title"
         android:layout_width="250dp"
@@ -34,7 +37,8 @@
             android:layout_weight="70"
             android:padding="5dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/education_button" />
+            app:srcCompat="@drawable/education_button"
+            tools:ignore="VectorDrawableCompat" />
         <ImageButton
             android:id="@+id/support_button"
             android:background="#ffffff"
@@ -43,7 +47,8 @@
             android:layout_weight="70"
             android:padding="5dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/support_button" />
+            app:srcCompat="@drawable/support_button"
+            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
     <LinearLayout
         android:paddingTop="10dp"
@@ -60,7 +65,8 @@
             android:layout_weight="70"
             android:padding="5dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/community_button" />
+            app:srcCompat="@drawable/community_button"
+            tools:ignore="VectorDrawableCompat" />
         <ImageButton
             android:id="@+id/about_us_button"
             android:background="#ffffff"
@@ -69,6 +75,7 @@
             android:layout_weight="70"
             android:padding="5dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/about_us_button" />
+            app:srcCompat="@drawable/about_us_button"
+            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
 </RelativeLayout>
