@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:id="@+id/completescreen"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,35 +9,36 @@
     android:orientation="vertical"
     android:background="#ffffff"
     >
-
-
-    <ImageView
-        android:id="@+id/top_menu"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/top_menu"
-        tools:ignore="VectorDrawableCompat" />
-    <ImageView
+    <androidx.cardview.widget.CardView
         android:id="@+id/top_title"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/agvfa" />
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#DFF5FF"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="5dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/agvfa"
+            tools:ignore="VectorDrawableCompat" />
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
-        android:layout_below="@id/top_menu"
-        android:layout_height="match_parent"
+        android:layout_below="@id/top_title"
         android:layout_width="match_parent"
-        android:orientation="vertical">
-
+        android:layout_weight="8"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        >
         <LinearLayout
-            android:layout_marginTop="5dp"
             android:id="@+id/buttons1"
-            android:layout_below="@id/top_menu"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="0dp"
-            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/education_button"
@@ -44,6 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginRight="2.5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/education_button"
                 tools:ignore="VectorDrawableCompat" />
@@ -53,6 +56,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="2.5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/support_button"
                 tools:ignore="VectorDrawableCompat" />
@@ -63,6 +67,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_below="@+id/buttons1">
             <ImageButton
                 android:id="@+id/community"
@@ -70,6 +76,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginRight="2.5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/community_button"
                 tools:ignore="VectorDrawableCompat" />
@@ -79,9 +86,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="2.5dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/about_us_button"
                 tools:ignore="VectorDrawableCompat" />
         </LinearLayout>
     </LinearLayout >
-</RelativeLayout>
+</LinearLayout>
