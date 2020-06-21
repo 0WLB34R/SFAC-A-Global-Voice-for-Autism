@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#DFF5FF</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="backgroundColor">#DFF5FF</color>
+    <color name="colorQuiz">#E1CE7A</color>
+    <color name="coloQuestions">#C5BAAF</color>
 </resources>

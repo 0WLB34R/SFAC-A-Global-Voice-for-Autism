@@ -50,14 +50,15 @@ public class QuizActivity  extends AppCompatActivity {
     List<RadioButton>allButtons = new ArrayList<>();
     private View render(){
         RelativeLayout parentRelativeLayout = new RelativeLayout(context);
-        parentRelativeLayout.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+        parentRelativeLayout.setBackgroundColor(getResources().getColor(R.color.colorQuiz));
 
         LinearLayout frameLinearLayout = new LinearLayout(context);
         frameLinearLayout.setOrientation(LinearLayout.VERTICAL);
 
 
+
         frameLinearLayout.setId(FRAME_ID);
-        frameLinearLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+        frameLinearLayout.setBackgroundColor(getResources().getColor(R.color.coloQuestions));
         frameLinearLayout.setGravity(LinearLayout.TEXT_ALIGNMENT_CENTER);
 
 
@@ -101,11 +102,11 @@ public class QuizActivity  extends AppCompatActivity {
                                 Score++;
 
 
-                                String succeed = "Number of correct answer is \t " + Score + "\n you are winning";
+                                String succeed = "The number of correct answers is \t " + Score + "\n you are winning:)";
                                 Toast.makeText(getBaseContext(), succeed, Toast.LENGTH_LONG).show();
                             } else {
                                 incorrectScore++;
-                                String failed = "Number of wrong answer is \t " + incorrectScore + "\n you are failing:(";
+                                String failed = "The number of wrong answers is \t " + incorrectScore + "\n you are failing:(";
 
                                 Toast.makeText(getBaseContext(), failed, Toast.LENGTH_LONG).show();
 
@@ -121,11 +122,11 @@ public class QuizActivity  extends AppCompatActivity {
 
 
         parentRelativeLayout.addView(frameLinearLayout);
-        /*/ScrollView scrollView = new ScrollView(context);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        scrollView.setLayoutParams(layoutParams);
+       // ScrollView scrollView = new ScrollView(context);
+        //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        //scrollView.setLayoutParams(layoutParams);
 
-        scrollView.addView(frameLinearLayout);/*/
+        //scrollView.addView(frameLinearLayout);
         return parentRelativeLayout;
 
     }
@@ -170,7 +171,7 @@ public class QuizActivity  extends AppCompatActivity {
         number_three.setAnswers(answersNumber_Three);
         questions.add(number_three);
 
-       Questions number_four = new Questions("Who is Elmo's best friend ");
+      /*/ Questions number_four = new Questions("Who is Elmo's best friend ");
         List<Answers>answersNumber_Four = new ArrayList<>();
         answersNumber_Four.add(new Answers("Manolo", true));
         answersNumber_Four.add(new Answers("Pedro", false));
@@ -179,7 +180,7 @@ public class QuizActivity  extends AppCompatActivity {
         answersNumber_Four.add(new Answers("Rodrigo", false));
 
         number_four.setAnswers(answersNumber_Four);
-        questions.add(number_four);
+        questions.add(number_four);/*/
 
         quiz.setQuestions(questions);
     }
