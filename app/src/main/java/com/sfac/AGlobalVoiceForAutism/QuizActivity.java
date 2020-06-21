@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class QuizActivity  extends AppCompatActivity {
     private Context context;
     private static final int FRAME_ID = 600;
     private  Quiz quiz;
+    private int Score=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,16 @@ public class QuizActivity  extends AppCompatActivity {
 
         LinearLayout frameLinearLayout = new LinearLayout(context);
         frameLinearLayout.setOrientation(LinearLayout.VERTICAL);
+
         frameLinearLayout.setId(FRAME_ID);
         frameLinearLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+
+        ScrollView scrollView = new ScrollView(context);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        scrollView.setLayoutParams(layoutParams);
+
+        scrollView.addView(frameLinearLayout);
+
 
         int dynamicId = 0;
         for (Questions questions: this.quiz.getQuestions()){
@@ -57,26 +67,39 @@ public class QuizActivity  extends AppCompatActivity {
             questionTextView.setTextSize(15);
             frameLinearLayout.addView(questionTextView);
 
+            List<RadioButton>radioButtons = new ArrayList<>();
+
             RadioGroup possibleAnswers = new RadioGroup(context);
             possibleAnswers.setOrientation(LinearLayout.VERTICAL);
 
             for(Answers  answers: questions.getAnswers()){
                 RadioButton answersRadioButton = new RadioButton(context);
+                radioButtons.add(answersRadioButton);
                 answersRadioButton.setId(dynamicId);
                 answersRadioButton.setText(answers.getValue());
                 possibleAnswers.addView(answersRadioButton);
                 dynamicId++;
+                if(answersRadioButton.getId()==0){
+                    Score++;
+                    TextView scoreTextView = new TextView(context);
+                    scoreTextView.setTextSize(15);
+                    scoreTextView.setHeight(20);
+
+                    scoreTextView.setText("Score:" + Score);
+                }
+
             }
+
             possibleAnswers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int id) {
                     Log.e("onCheckedChanged", "Id:" + id);
 
-
                 }
             });
             frameLinearLayout.addView(possibleAnswers);
         }
+
 
 
         parentRelativeLayout.addView(frameLinearLayout);
@@ -97,6 +120,9 @@ public class QuizActivity  extends AppCompatActivity {
 
         number_one.setAnswers(answersNumber_One);
         questions.add(number_one);
+
+
+
 
         Questions number_two = new Questions("What game is Elmo playing? ");
         List<Answers>answersNumber_Two = new ArrayList<>();
