@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,12 +28,15 @@ public class VideoListActivity extends AppCompatActivity {
      private RecyclerView taskRecyclerView;
      private ActivitiesRecyclerViewAdapter adapter;
      private List<ActivitiesItem> items = new ArrayList<>();
+     private Button extraVideo;
 
     @Override
  protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_video_list);
      context = this;
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#466060"));
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
      initviews();
      addEvents();
      fillvideoList();
@@ -41,6 +46,7 @@ public class VideoListActivity extends AppCompatActivity {
         adapter = new ActivitiesRecyclerViewAdapter(context, items);
         taskRecyclerView.setAdapter(adapter);
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        extraVideo = findViewById(R.id.extra_video_button);
     }
     private void addEvents(){
 
@@ -57,6 +63,13 @@ public class VideoListActivity extends AppCompatActivity {
            @Override
             public void onTaskQuizClicked(ActivitiesItem task) {
                 Log.e("OnTaskClicked",task.getLessons()+"Quiz");
+            }
+        });
+        extraVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent extraintent = new Intent(context,PopUpVideoActivity.class);
+                startActivity(extraintent);
             }
         });
     }

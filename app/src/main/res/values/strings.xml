@@ -8,4 +8,8 @@
     <string name="quiz">Quiz</string>
     <string name="videos">Videos</string>
     <string name="_100_100">100/100</string>
+    <string name="register_name">Video name</string>
+    <string name="register_extension">Extension</string>
+    <string name="register_id">Video Id</string>
+    <string name="find_video">Find Video</string>
 </resources>

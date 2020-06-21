@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="#9AD4D6"
+        app:cardBackgroundColor="@color/backgroundColor2"
         app:cardUseCompatPadding="true">
 
 

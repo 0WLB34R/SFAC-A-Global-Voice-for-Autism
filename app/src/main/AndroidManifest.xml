@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_xhdpi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -32,10 +33,14 @@
             android:name=".VideoListActivity"
             android:label="Education"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".AboutUsActivity"
+        <activity
+            android:name=".AboutUsActivity"
             android:label="About Us"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
 
+        <activity android:name=".PopUpVideoActivity"
+            android:label="Extra videos"
+            android:parentActivityName=".VideoListActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
