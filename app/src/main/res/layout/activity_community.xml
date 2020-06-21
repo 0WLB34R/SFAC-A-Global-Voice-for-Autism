@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -18,7 +19,8 @@
         android:background="#E3F2D2"
         android:scaleType="fitCenter"
         android:paddingBottom="10dp"
-        app:srcCompat="@drawable/facebook" />
+        app:srcCompat="@drawable/facebook"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/waButton"
@@ -28,7 +30,8 @@
         android:scaleType="fitCenter"
         android:background="#E3F2D2"
         android:paddingBottom="10dp"
-        app:srcCompat="@drawable/whatsapp" />
+        app:srcCompat="@drawable/whatsapp"
+        tools:ignore="VectorDrawableCompat" />
     <ImageButton
         android:id="@+id/zButton"
         android:layout_width="match_parent"
@@ -37,7 +40,8 @@
         android:scaleType="fitCenter"
         android:background="#E3F2D2"
         android:paddingBottom="10dp"
-        app:srcCompat="@drawable/zoom" />
+        app:srcCompat="@drawable/zoom"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/loButton"
@@ -47,7 +51,8 @@
         android:background="#E3F2D2"
         android:scaleType="fitCenter"
         android:paddingBottom="10dp"
-        app:srcCompat="@drawable/local_com" />
+        app:srcCompat="@drawable/local_com"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </LinearLayout>

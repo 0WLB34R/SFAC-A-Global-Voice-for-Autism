@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sfac.AGlobalVoiceForAutism.callBack.PlayVideoCallBack;
 import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
 import com.sfac.AGlobalVoiceForAutism.R;
 
@@ -17,6 +18,8 @@ import java.util.List;
 public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<ActivitiesViewHolder> {
    private List<ActivitiesItem> activitiesItems;
    private LayoutInflater inflater;
+   private PlayVideoCallBack callBack;
+
 
     public ActivitiesRecyclerViewAdapter(Context context , List<ActivitiesItem> activitiesItems) {
         this.activitiesItems = activitiesItems;
@@ -36,10 +39,30 @@ public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<Activiti
        holder.video_image.setImageResource(activitiesItem.getIcon_video());
        holder.lesson.setText(activitiesItem.getLessons());
 
+       holder.link_videos.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               if(callBack != null){
+                   callBack.onTaskVideoClicked(activitiesItem);
+               }
+           }
+       });
+       holder.link_quiz.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               if(callBack != null){
+                     callBack.onTaskQuizClicked(activitiesItem);
+               }
+           }
+       });
     }
 
     @Override
     public int getItemCount() {
         return activitiesItems.size();
+    }
+
+    public void setCallBack(PlayVideoCallBack callBack) {
+        this.callBack = callBack;
     }
 }

@@ -2,5 +2,17 @@
 <resources>
     <string name="app_name">AGVFA</string>
     <string name="com_section">الجماعة</string>
-    <string name="edu_section">altaelim</string>
+    <string name="loading">تحميل</string>
+    <string name="video_section">شغل الفيديو</string>
+    <string name="edu_section">التعليم</string>
+    <string name="lesson_section">درس #</string>
+    <string name="quiz">اختبار</string>
+    <string name="videos">أشرطة فيديو</string>
+    <string name="register_name">اسم الفيديو</string>
+    <string name="register_extension">تمديد</string>
+    <string name="find_video">Resultado de traducción</string>
+    <string name="empty_fields">Inglés</string>
+    <string name="not_valid_video">Árabe</string>
+    <string name="register_id">معرف الفيديو</string>
+    <string name="_100_100">100/100</string>
 </resources>

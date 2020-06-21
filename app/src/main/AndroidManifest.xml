@@ -9,21 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_xhdpi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".CommunityActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".VideoListActivity"/>
-        <activity android:name=".VideoActivity"/>
-        <activity android:name=".QuizActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".CommunityActivity"
+            android:label="Community"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoActivity"
+            android:label="Video"
+            android:parentActivityName=".VideoListActivity" />
+        <activity
+            android:name=".VideoListActivity"
+            android:label="Education"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="About Us"
+            android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".PopUpVideoActivity"
+            android:label="Extra videos"
+            android:parentActivityName=".VideoListActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

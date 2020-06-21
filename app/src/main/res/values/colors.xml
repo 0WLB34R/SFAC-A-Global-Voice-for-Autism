@@ -6,4 +6,6 @@
     <color name="backgroundColor">#DFF5FF</color>
     <color name="colorQuiz">#E1CE7A</color>
     <color name="coloQuestions">#C5BAAF</color>
+    <color name="backgroundColor2">#9AD4D6</color>
+    <color name="backgroundColor3">#466060</color>
 </resources>
