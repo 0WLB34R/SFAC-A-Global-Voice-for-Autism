@@ -43,6 +43,9 @@ public class QuizActivity  extends AppCompatActivity {
     private void addEvents(){
 
     }
+
+
+    List<RadioButton>allButtons = new ArrayList<>();
     private View render(){
         RelativeLayout parentRelativeLayout = new RelativeLayout(context);
         parentRelativeLayout.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
@@ -53,11 +56,7 @@ public class QuizActivity  extends AppCompatActivity {
         frameLinearLayout.setId(FRAME_ID);
         frameLinearLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
 
-        ScrollView scrollView = new ScrollView(context);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        scrollView.setLayoutParams(layoutParams);
 
-        scrollView.addView(frameLinearLayout);
 
 
         int dynamicId = 0;
@@ -67,33 +66,40 @@ public class QuizActivity  extends AppCompatActivity {
             questionTextView.setTextSize(15);
             frameLinearLayout.addView(questionTextView);
 
-            List<RadioButton>radioButtons = new ArrayList<>();
+
 
             RadioGroup possibleAnswers = new RadioGroup(context);
             possibleAnswers.setOrientation(LinearLayout.VERTICAL);
 
+
             for(Answers  answers: questions.getAnswers()){
                 RadioButton answersRadioButton = new RadioButton(context);
-                radioButtons.add(answersRadioButton);
                 answersRadioButton.setId(dynamicId);
                 answersRadioButton.setText(answers.getValue());
+
+                allButtons.add(answersRadioButton);
+                //radioButtons.add(answersRadioButton);
                 possibleAnswers.addView(answersRadioButton);
                 dynamicId++;
-                if(answersRadioButton.getId()==0){
-                    Score++;
-                    TextView scoreTextView = new TextView(context);
-                    scoreTextView.setTextSize(15);
-                    scoreTextView.setHeight(20);
-
-                    scoreTextView.setText("Score:" + Score);
-                }
-
             }
 
             possibleAnswers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int id) {
                     Log.e("onCheckedChanged", "Id:" + id);
+                    for(RadioButton radioButton: allButtons){
+                        if(radioButton.getId()==id){
+                            Log.e("onCheckedChanged", "Text: " + radioButton.getText());
+
+                                Score++;
+                                TextView scoreTextView = new TextView(context);
+                                scoreTextView.setTextSize(15);
+                                scoreTextView.setHeight(20);
+
+                                scoreTextView.setText("Score:" + Score);
+
+                        }
+                    }
 
                 }
             });
@@ -103,7 +109,13 @@ public class QuizActivity  extends AppCompatActivity {
 
 
         parentRelativeLayout.addView(frameLinearLayout);
+        /*/ScrollView scrollView = new ScrollView(context);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        scrollView.setLayoutParams(layoutParams);
+
+        scrollView.addView(frameLinearLayout);/*/
         return parentRelativeLayout;
+
     }
     private void fillQuizStr (){
         this.quiz =  new Quiz();
