@@ -41,6 +41,7 @@
         <activity android:name=".PopUpVideoActivity"
             android:label="Extra videos"
             android:parentActivityName=".VideoListActivity"/>
+        <activity android:name=".QuizActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
