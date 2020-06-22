@@ -13,13 +13,16 @@
     <string name="quuestion_2">question2</string>
     <string name="question_3">question3</string>
     <string name="question_4">question4</string>
-    <string name="register_name" translatable="false">Video name</string>
+    <string name="register_name">Video name</string>
     <string name="register_extension">Extension</string>
     <string name="register_id">Video Id</string>
     <string name="extra_videos">Extra Videos</string>
     <string name="find_video">Find Video</string>
     <string name="empty_fields">Please enter all fields</string>
     <string name="not_valid_video">Not a valid video</string>
+    <string name="download">Download</string>
+    <string name="take_quiz">Take Quiz !</string>
+    <string name="video_menu">Videos menu</string>
     <string name="who_we_are">A Global Voice for Autism brings together teams of autism
         professionals, trauma specialists and local community experts to train key community
         stakeholders in the skills to support and include autistic children and children whose lives

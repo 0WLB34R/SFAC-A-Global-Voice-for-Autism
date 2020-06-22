@@ -23,4 +23,7 @@
     <string name="quuestion_2">السؤال 2</string>
     <string name="question_1">السؤال رقم 1</string>
     <string name="question_4">السؤال 4</string>
+    <string name="download">تحميل</string>
+    <string name="take_quiz">تقدم للإختبار !</string>
+    <string name="video_menu">قائمة مقاطع الفيديو</string>
 </resources>
