@@ -36,7 +36,7 @@
         <LinearLayout
             android:id="@+id/buttons1"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
@@ -61,15 +61,25 @@
                 app:srcCompat="@drawable/support_button"
                 tools:ignore="VectorDrawableCompat" />
         </LinearLayout>
+        <!-- esto -->
+        <LinearLayout
+            android:id="@+id/filler"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/buttons1"/>
         <LinearLayout
             android:id="@+id/buttons2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:orientation="horizontal"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_below="@+id/buttons1">
+            android:layout_below="@+id/filler">
             <ImageButton
                 android:id="@+id/community"
                 android:background="#ffffff"
