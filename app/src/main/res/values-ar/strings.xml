@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AGVFA</string>
+    <string name="com_section">الجماعة</string>
+    <string name="loading">تحميل</string>
+    <string name="video_section">شغل الفيديو</string>
+    <string name="edu_section">التعليم</string>
+    <string name="lesson_section">درس #</string>
+    <string name="quiz">اختبار</string>
+    <string name="videos">أشرطة فيديو</string>
+    <string name="register_extension">تمديد</string>
+    <string name="empty_fields">Inglés</string>
+    <string name="not_valid_video">Árabe</string>
+    <string name="register_id">معرف الفيديو</string>
+    <string name="_100_100">100/100</string>
+    <string name="find_video">إيجاد الفيديو</string>
+    <string name="who_we_are">يجمع الصوت العالمي للتوحد فرق التوحد</string>
+    <string name="register_name" translatable="false">اسم الفيديو</string>
+    <string name="founding_story">في عام 2012 ، التقى مؤسسنا ، ميليسا دايموند ، أم أ</string>
+    <string name="about_us_section">معلومات عنا</string>
+    <string name="extra_videos">مقاطع فيديو إضافية</string>
+    <string name="question_3">السؤال 3</string>
+    <string name="quuestion_2">السؤال 2</string>
+    <string name="question_1">السؤال رقم 1</string>
+    <string name="question_4">السؤال 4</string>
+    <string name="download">تحميل</string>
+    <string name="take_quiz">تقدم للإختبار !</string>
+    <string name="video_menu">قائمة مقاطع الفيديو</string>
+</resources>

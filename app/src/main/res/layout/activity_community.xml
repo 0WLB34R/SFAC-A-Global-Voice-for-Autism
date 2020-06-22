@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="#E3F2D2"
+    >
+
+
+    <ImageButton
+        android:id="@+id/fbButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="#E3F2D2"
+        android:scaleType="fitCenter"
+        android:paddingBottom="10dp"
+        app:srcCompat="@drawable/facebook"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/waButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:background="#E3F2D2"
+        android:paddingBottom="10dp"
+        app:srcCompat="@drawable/whatsapp"
+        tools:ignore="VectorDrawableCompat" />
+    <ImageButton
+        android:id="@+id/zButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:background="#E3F2D2"
+        android:paddingBottom="10dp"
+        app:srcCompat="@drawable/zoom"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/loButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E3F2D2"
+        android:scaleType="fitCenter"
+        android:paddingBottom="10dp"
+        app:srcCompat="@drawable/local_com"
+        tools:ignore="VectorDrawableCompat" />
+
+
+</LinearLayout>
