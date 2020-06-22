@@ -29,12 +29,14 @@ public class VideoListActivity extends AppCompatActivity {
      private ActivitiesRecyclerViewAdapter adapter;
      private List<ActivitiesItem> items = new ArrayList<>();
      private Button extraVideo;
+     private String lesson ;
 
-    @Override
+     @Override
  protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_video_list);
      context = this;
+     lesson = getString(R.string.lesson_section);
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#466060"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
      initviews();
@@ -77,17 +79,17 @@ public class VideoListActivity extends AppCompatActivity {
     }
     private void fillvideoList(){
        items.add(new ActivitiesItem("MeO8VIx-jXA","Elmo",".jpg",
-               "Lesson #1",R.drawable.elmo_1));
+               lesson+" 1",R.drawable.elmo_1));
        items.add(new ActivitiesItem("vSYadh2xmcI","ElmoLittle",".jpg",
-               "Lesson #2",R.drawable.elmo_2));
-       items.add(new ActivitiesItem("3","Video_3","",
-               "Lesson #3",R.drawable.activities));
-       items.add(new ActivitiesItem("4","Video_4","",
-               "Lesson #4",R.drawable.worksheet));
-       items.add(new ActivitiesItem("5","Video_5","",
-               "Lesson #5",R.drawable.activities));
-       items.add(new ActivitiesItem("6","Video_6","",
-               "Lesson #6",R.drawable.worksheet));
+               lesson+" 2",R.drawable.elmo_2));
+       items.add(new ActivitiesItem("3","Video_3",".jpg",
+               lesson+" 3",R.drawable.activities));
+       items.add(new ActivitiesItem("4","Video_4",".jpg",
+               lesson+" 4",R.drawable.worksheet));
+       items.add(new ActivitiesItem("5","Video_5",".jpg",
+               lesson+" 5",R.drawable.activities));
+       items.add(new ActivitiesItem("6","Video_6",".jpg",
+               lesson+" 6",R.drawable.worksheet));
 
     }
 }

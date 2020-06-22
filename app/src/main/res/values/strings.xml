@@ -3,6 +3,7 @@
     <string name="loading">loading</string>
     <string name="com_section">Community</string>
     <string name="edu_section">Education</string>
+    <string name="about_us_section">About us</string>
     <string name="lesson_section">Lesson #</string>
     <string name="video_section">Play video</string>
     <string name="quiz">Quiz</string>
@@ -15,7 +16,27 @@
     <string name="register_name" translatable="false">Video name</string>
     <string name="register_extension">Extension</string>
     <string name="register_id">Video Id</string>
+    <string name="extra_videos">Extra Videos</string>
     <string name="find_video">Find Video</string>
     <string name="empty_fields">Please enter all fields</string>
     <string name="not_valid_video">Not a valid video</string>
+    <string name="who_we_are">A Global Voice for Autism brings together teams of autism
+        professionals, trauma specialists and local community experts to train key community
+        stakeholders in the skills to support and include autistic children and children whose lives
+        have been impacted by trauma in their communities. Because we have seen that trainees learn
+        most effectively when they are also receiving the emotional and intellectual support they
+        need, all of our programs are coupled with parent and sibling support and self-development,
+        community education and awareness programming and inclusion advocacy training for relevant
+        local stakeholders. groups and teacher support groups, as well as with community education
+        sessions. Using culturally sensitive, evidence-based materials designed for limited resource
+        communities, A Global Voice for Autism disseminates techniques, networks and information
+        that benefit autistic children and their communities for years to come." </string>
+    <string name="founding_story">In 2012, our founder, Melissa Diamond, met the mother of a
+        newly-diagnosed autistic child. After learning about her daughter’s diagnosis, the mother
+        planned to return home and hide her daughter at in her home in order to avoid the autism
+        stigma in her community. Diamond has an autistic loved one in the U.S. who is autistic and
+        non-verbal and was struck by how different her friend’s life might have been if she had
+        simply been born somewhere else. A Global Voice for Autism was founded on the principle that
+        ALL autistic children should have access to education, community and support, no matter
+        where they live."</string>
 </resources>

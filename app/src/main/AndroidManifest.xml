@@ -22,7 +22,7 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".CommunityActivity"
-            android:label="Community"
+            android:label="@string/com_section"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -31,17 +31,20 @@
             android:parentActivityName=".VideoListActivity" />
         <activity
             android:name=".VideoListActivity"
-            android:label="Education"
+            android:label="@string/edu_section"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AboutUsActivity"
-            android:label="About Us"
+            android:label="@string/about_us_section"
             android:parentActivityName=".MainActivity" />
 
         <activity android:name=".PopUpVideoActivity"
-            android:label="Extra videos"
+            android:label="@string/extra_videos"
             android:parentActivityName=".VideoListActivity"/>
-        <activity android:name=".QuizActivity"/>
+        <activity
+            android:name=".QuizActivity"
+            android:label="@string/quiz"
+            android:parentActivityName=".VideoListActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

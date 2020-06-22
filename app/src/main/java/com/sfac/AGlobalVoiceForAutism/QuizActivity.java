@@ -1,6 +1,8 @@
 package com.sfac.AGlobalVoiceForAutism;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +39,8 @@ public class QuizActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         context = this;
 
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#466060"));
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
         fillQuizStr();
         setContentView(render());
 
