@@ -20,6 +20,7 @@ public class HardcodedVideoActivity extends Activity {
     private VideoView mVideoView;
     private int mCurrentPosition = 0;
     private static final String PLAYBACK_TIME = "play_time";
+    private ActivitiesItem aI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,9 @@ public class HardcodedVideoActivity extends Activity {
         Intent intent = getIntent();
         if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY2)) {
             String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY2);
-            ActivitiesItem aI = new Gson().fromJson(userObj, ActivitiesItem.class);
-            Toast.makeText(this, aI.getName()+" "+aI.getExtension()+aI.getId(),
-                    Toast.LENGTH_SHORT).show();
+             aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+            //Toast.makeText(this, aI.getName()+" "+aI.getExtension()+aI.getId(),
+              //      Toast.LENGTH_SHORT).show();
         }
     }
 
