@@ -159,9 +159,15 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     }
 
     public void gotoOfflineVideo(View view){
-        Intent intent = new Intent(this,HardcodedVideoActivity.class);
-        startActivity(intent);
-        //Desde aca mandar al HardcodedVideoActivity la info del video que le llegó
+
+        Intent intent1 = getIntent();
+        if(intent1.hasExtra(Constants.INTENT_KEY_ACTIVITY)){
+            String obj = intent1.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
+            Intent intent = new Intent(this,HardcodedVideoActivity.class);
+            intent.putExtra(Constants.INTENT_KEY_ACTIVITY2, obj);
+            startActivity(intent);
+        }
+
     }
 
     private void receiveValues() {

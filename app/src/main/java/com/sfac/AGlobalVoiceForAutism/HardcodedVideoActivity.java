@@ -1,12 +1,17 @@
 package com.sfac.AGlobalVoiceForAutism;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.google.gson.Gson;
+import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
+import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
 
 public class HardcodedVideoActivity extends Activity {
@@ -21,6 +26,7 @@ public class HardcodedVideoActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardcoded_video);
+        receiveValues();
         mVideoView = findViewById(R.id.videoview);
         if (savedInstanceState != null) {
             mCurrentPosition = savedInstanceState.getInt(PLAYBACK_TIME);
@@ -29,6 +35,16 @@ public class HardcodedVideoActivity extends Activity {
         controller.setMediaPlayer(mVideoView);
         mVideoView.setMediaController(controller);
 
+    }
+
+    private void receiveValues(){
+        Intent intent = getIntent();
+        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY2)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY2);
+            ActivitiesItem aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+            Toast.makeText(this, aI.getName()+" "+aI.getExtension()+aI.getId(),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private Uri getMedia(String mediaName) {
