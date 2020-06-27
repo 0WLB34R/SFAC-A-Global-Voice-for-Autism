@@ -16,11 +16,11 @@ import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
 public class HardcodedVideoActivity extends Activity {
 
-    private static final String VIDEO_SAMPLE = "lesson_one";
+    private String videoSample;
     private VideoView mVideoView;
     private int mCurrentPosition = 0;
     private static final String PLAYBACK_TIME = "play_time";
-    private ActivitiesItem aI;
+    private static ActivitiesItem aI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class HardcodedVideoActivity extends Activity {
         if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY2)) {
             String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY2);
              aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+             videoSample = aI.getName();
             //Toast.makeText(this, aI.getName()+" "+aI.getExtension()+aI.getId(),
               //      Toast.LENGTH_SHORT).show();
         }
@@ -54,7 +55,7 @@ public class HardcodedVideoActivity extends Activity {
     }
 
     private void initializePlayer() {
-        Uri videoUri = getMedia(VIDEO_SAMPLE);
+        Uri videoUri = getMedia(videoSample);
         mVideoView.setVideoURI(videoUri);
         if (mCurrentPosition > 0) {
             mVideoView.seekTo(mCurrentPosition);
