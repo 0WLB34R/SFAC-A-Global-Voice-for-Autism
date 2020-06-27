@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="#FDF1FF">
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingTop="35dp"
+        android:layout_margin="30dp"
         android:layout_marginBottom="30dp"
         app:srcCompat="@drawable/whoweare"
         tools:ignore="VectorDrawableCompat" />
@@ -40,8 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_margin="30dp"
         app:srcCompat="@drawable/foundingst"
         tools:ignore="VectorDrawableCompat" />
 
