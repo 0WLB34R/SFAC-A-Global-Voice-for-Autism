@@ -20,10 +20,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".activities.CommunityMainActivity"
+            android:label="CommunityRegisterPage"
+            android:parentActivityName=".CommunityActivity">
+
+        </activity>
+        <activity
+            android:name=".activities.CommunityLoginActivity"
+            android:label="CommunityLogInPage"
+            android:parentActivityName=".CommunityActivity">
+
+        </activity>
+
         <activity
             android:name=".CommunityActivity"
             android:label="@string/com_section"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activities.CommunityLoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VideoActivity"
