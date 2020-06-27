@@ -77,19 +77,10 @@ public class VideoListActivity extends AppCompatActivity {
             }
         });
     }
-    private void fillvideoList(){
-       items.add(new ActivitiesItem("MeO8VIx-jXA","Elmo",".jpg",
-               lesson+" 1",R.drawable.elmo_1));
-       items.add(new ActivitiesItem("vSYadh2xmcI","ElmoLittle",".jpg",
-               lesson+" 2",R.drawable.elmo_2));
-       items.add(new ActivitiesItem("gMp0SlkVU8w","lesson_one",".jpg",
-               lesson+" 3",R.drawable.activities));
-       items.add(new ActivitiesItem("4","Video_4",".jpg",
-               lesson+" 4",R.drawable.worksheet));
-       items.add(new ActivitiesItem("5","Video_5",".jpg",
-               lesson+" 5",R.drawable.activities));
-       items.add(new ActivitiesItem("6","Video_6",".jpg",
-               lesson+" 6",R.drawable.worksheet));
+    private void fillvideoList() {
+        for (ActivitiesItem item : VideoListSingleton.getInstance().activityItems){
+            items.add(item);
+        }
 
     }
 }
