@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -31,6 +33,8 @@ public class QuizActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_list_view);
         context =this;
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#161E50"));
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
         initViews();
         addEvents();
         fillQuizList();
