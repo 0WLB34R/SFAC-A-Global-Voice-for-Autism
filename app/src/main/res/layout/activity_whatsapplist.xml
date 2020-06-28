@@ -14,6 +14,8 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="15dp"
             android:text="Group1"
+            android:background="#ffffff"
+            android:onClick="toWhatsapp"
             android:textSize="30dp"/>
         <Button
             android:id="@+id/wpbutton2"
@@ -22,6 +24,8 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="15dp"
             android:text="Group2"
+            android:background="#ffffff"
+            android:onClick="toWhatsapp2"
             android:textSize="30dp"/>
         <Button
             android:id="@+id/wpbutton3"
@@ -30,6 +34,8 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="15dp"
             android:text="Group3"
+            android:background="#ffffff"
+            android:onClick="toWhatsapp3"
             android:textSize="30dp"/>
     </LinearLayout>
 </ScrollView>
