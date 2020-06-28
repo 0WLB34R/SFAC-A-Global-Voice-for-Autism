@@ -50,6 +50,9 @@ public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizViewHolder
                if(callback != null){
                    callback.onFirstOptionClicked(question);
                    holder.button1.setBackgroundResource(R.drawable.style_form_b);
+                   holder.button2.setBackgroundResource(R.drawable.style_form);
+                   holder.button3.setBackgroundResource(R.drawable.style_form);
+                   holder.button4.setBackgroundResource(R.drawable.style_form);
                }
            }
        });
@@ -58,6 +61,10 @@ public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizViewHolder
             public void onClick(View v) {
                 if(callback != null){
                     callback.onSecondOptionClicked(question);
+                    holder.button1.setBackgroundResource(R.drawable.style_form);
+                    holder.button2.setBackgroundResource(R.drawable.style_form_b);
+                    holder.button3.setBackgroundResource(R.drawable.style_form);
+                    holder.button4.setBackgroundResource(R.drawable.style_form);
                 }
             }
         });
@@ -66,6 +73,10 @@ public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizViewHolder
             public void onClick(View v) {
                 if(callback != null){
                     callback.onThirdOptionClicked(question);
+                    holder.button1.setBackgroundResource(R.drawable.style_form);
+                    holder.button2.setBackgroundResource(R.drawable.style_form);
+                    holder.button3.setBackgroundResource(R.drawable.style_form_b);
+                    holder.button4.setBackgroundResource(R.drawable.style_form);
                 }
             }
         });
@@ -74,6 +85,10 @@ public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizViewHolder
             public void onClick(View v) {
                 if(callback != null){
                     callback.onFourthOptionClicked(question);
+                    holder.button1.setBackgroundResource(R.drawable.style_form);
+                    holder.button2.setBackgroundResource(R.drawable.style_form);
+                    holder.button3.setBackgroundResource(R.drawable.style_form);
+                    holder.button4.setBackgroundResource(R.drawable.style_form_b);
                 }
             }
         });
