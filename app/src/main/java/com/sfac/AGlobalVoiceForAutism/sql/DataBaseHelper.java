@@ -2,18 +2,25 @@ package com.sfac.AGlobalVoiceForAutism.sql;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.preference.PreferenceManager;
+import android.service.autofill.UserData;
 
 import androidx.annotation.Nullable;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+    private SharedPreferences preferences;
+    private Context context;
 
     public static final String DataBaseName = "login.DataBase";
 
     public DataBaseHelper(Context context) {
         super(context, "login.DataBase", null,1 );
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
     }
 
 
@@ -31,12 +38,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public Boolean insertData (String username, String password, String fullname, String age, String country, String email){
         SQLiteDatabase MyDataBase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("username", username);
-        contentValues.put("password", password);
-        contentValues.put("fullname", fullname);
-        contentValues.put("age", age);
-        contentValues.put("country", country);
-        contentValues.put("email", email);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("username", username);
+        editor.putString("password", password);
+        editor.putString("fullname", fullname);
+        editor.putString("age", age);
+        editor.putString("country", country);
+        editor.putString("email", email);
         long result =  MyDataBase.insert("users", null, contentValues);
         if(result == -1)return false; //failure
         else
@@ -72,4 +80,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
 }
