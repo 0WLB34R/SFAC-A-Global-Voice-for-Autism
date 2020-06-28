@@ -15,9 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"/>
     <LinearLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_above="@+id/bot">
     <Button
         android:id="@+id/downloadButton"
         android:layout_weight="1"
@@ -33,6 +34,13 @@
         android:layout_height="wrap_content"
         android:onClick="gotoQuiz"
         android:text="@string/take_quiz" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
     <Button
         android:id="@+id/returnButton"
@@ -42,13 +50,6 @@
         android:onClick="gotoVideoList"
         android:text="@string/video_menu" />
 
-    <Button
-        android:id="@+id/playOffline"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="gotoOfflineVideo"
-        android:text="Watch Offline" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -21,10 +21,13 @@ import com.google.gson.Gson;
 import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
 import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
+import java.io.File;
+
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
 import static android.os.Environment.DIRECTORY_PICTURES;
 
 
-public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener, YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener{
+public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener, YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener {
 
     FirebaseStorage fireStorage;
     StorageReference sRef;
@@ -33,7 +36,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     //String filename = "Elmo.jpg";
     //String videoId = "MeO8VIx-jXA";
     ActivitiesItem aI;
-
+    boolean existence = false;
 
 
     @Override
@@ -41,9 +44,16 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        playerView = (YouTubePlayerView)findViewById(R.id.ytplayerView);
-        playerView.initialize(YouTubeConfig.getApiKey(),this);
+        playerView = (YouTubePlayerView) findViewById(R.id.ytplayerView);
+        playerView.initialize(YouTubeConfig.getApiKey(), this);
+        //check existence of video so the button can change value
+        //change download to delete based on variable
         receiveValues();
+
+        if(aI.getId().matches("Harcoded")){
+           gotoOfflineVideo();
+        }
+
     }
 
     @Override
@@ -51,7 +61,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         youTubePlayer.setPlayerStateChangeListener(this);
         youTubePlayer.setPlaybackEventListener(this);
 
-        if(!b){
+        if (!b) {
             youTubePlayer.cueVideo(aI.getId());
         }
     }
@@ -116,54 +126,60 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     }
 
-    public void gotoQuiz(View view){
-        Intent intent = new Intent(this,QuizActivity.class);
+    public void gotoQuiz(View view) {
+        Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
 
     }
 
-    public void downloadVideo(View view){
-        sRef = fireStorage.getInstance().getReference();
-        ref = sRef.child(aI.getName()+aI.getExtension());
+    public void downloadVideo(View view) {
+        if (existence) {
+            Toast.makeText(this, "Video already Downloaded",
+                    Toast.LENGTH_LONG).show(); //Can put delete modification here
+        } else {
+            sRef = fireStorage.getInstance().getReference();
+            ref = sRef.child(aI.getName() + aI.getExtension());
 
-        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String url = uri.toString();
-                //String name = filename.substring(0,filename.length()-4);
-                downloadFile(VideoActivity.this, aI.getName(), aI.getExtension(), DIRECTORY_PICTURES,url );
-            }
-        }) .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
+            ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    String url = uri.toString();
+                    //String name = filename.substring(0,filename.length()-4);
+                    downloadFile(VideoActivity.this, aI.getName(), aI.getExtension(), DIRECTORY_DOWNLOADS, url);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
 
-            }
-        });
+                }
+            });
+        }
     }
 
-    public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
+    public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url) {
         DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri= Uri.parse(url);
+        Uri uri = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName+fileExtension);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
         Toast.makeText(this, "Video downloaded to My Files",
                 Toast.LENGTH_LONG).show();
+        //here change ann SQL variable to show availability of video offline
         downloadManager.enqueue(request);
     }
 
-    public void gotoVideoList(View view){
-        Intent intent = new Intent(this,VideoListActivity.class);
+    public void gotoVideoList(View view) {
+        Intent intent = new Intent(this, VideoListActivity.class);
         startActivity(intent);
 
     }
 
-    public void gotoOfflineVideo(View view){
+    public void gotoOfflineVideo() {
 
         Intent intent1 = getIntent();
-        if(intent1.hasExtra(Constants.INTENT_KEY_ACTIVITY)){
+        if (intent1.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
             String obj = intent1.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
-            Intent intent = new Intent(this,HardcodedVideoActivity.class);
+            Intent intent = new Intent(this, HardcodedVideoActivity.class);
             intent.putExtra(Constants.INTENT_KEY_ACTIVITY2, obj);
             startActivity(intent);
         }
@@ -175,6 +191,13 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
             String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
             aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+        }
+    }
+
+    private void checkAvailability() {
+        File file = new File(DIRECTORY_DOWNLOADS, aI.getName() + aI.getExtension());
+        if (file.exists()) {
+            existence = true;
         }
     }
 }
