@@ -36,7 +36,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     //String filename = "Elmo.jpg";
     //String videoId = "MeO8VIx-jXA";
     ActivitiesItem aI;
-    boolean existence = false;
 
 
     @Override
@@ -49,10 +48,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         //check existence of video so the button can change value
         //change download to delete based on variable
         receiveValues();
-
-        if(aI.getId().matches("Harcoded")){
-           gotoOfflineVideo();
-        }
 
     }
 
@@ -133,10 +128,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     }
 
     public void downloadVideo(View view) {
-        if (existence) {
-            Toast.makeText(this, "Video already Downloaded",
-                    Toast.LENGTH_LONG).show(); //Can put delete modification here
-        } else {
             sRef = fireStorage.getInstance().getReference();
             ref = sRef.child(aI.getName() + aI.getExtension());
 
@@ -153,7 +144,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
                 }
             });
-        }
     }
 
     public void downloadFile(Context context, String fileName, String fileExtension, String destinationDirectory, String url) {
@@ -174,17 +164,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     }
 
-    public void gotoOfflineVideo() {
-
-        Intent intent1 = getIntent();
-        if (intent1.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
-            String obj = intent1.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
-            Intent intent = new Intent(this, HardcodedVideoActivity.class);
-            intent.putExtra(Constants.INTENT_KEY_ACTIVITY2, obj);
-            startActivity(intent);
-        }
-
-    }
 
     private void receiveValues() {
         Intent intent = getIntent();
@@ -194,10 +173,4 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         }
     }
 
-    private void checkAvailability() {
-        File file = new File(DIRECTORY_DOWNLOADS, aI.getName() + aI.getExtension());
-        if (file.exists()) {
-            existence = true;
-        }
-    }
 }

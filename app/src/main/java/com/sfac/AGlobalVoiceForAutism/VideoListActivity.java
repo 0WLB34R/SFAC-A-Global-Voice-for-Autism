@@ -57,7 +57,12 @@ public class VideoListActivity extends AppCompatActivity {
            @Override
            public void onTaskVideoClicked(ActivitiesItem task) {
               Log.e("OnTaskVideoClicked", task.getLessons()+"Play_video");
-              Intent videoIntent = new Intent(context, VideoActivity.class);
+              Intent videoIntent;
+              if(task.getId().equals("Hardcoded")){
+                  videoIntent = new Intent(context, HardcodedVideoActivity.class);
+              }else{
+                  videoIntent = new Intent(context, VideoActivity.class);
+              }
               String videoString = new Gson().toJson(task);
               videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
               startActivity(videoIntent);

@@ -38,14 +38,13 @@ public class HardcodedVideoActivity extends Activity {
 
     }
 
-    private void receiveValues(){
+
+    private void receiveValues() {
         Intent intent = getIntent();
-        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY2)) {
-            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY2);
-             aI = new Gson().fromJson(userObj, ActivitiesItem.class);
-             videoSample = aI.getName();
-            //Toast.makeText(this, aI.getName()+" "+aI.getExtension()+aI.getId(),
-              //      Toast.LENGTH_SHORT).show();
+        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
+            aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+            videoSample = aI.getName();
         }
     }
 
