@@ -65,7 +65,7 @@ public class VideoListActivity extends AppCompatActivity {
            @Override
             public void onTaskQuizClicked(ActivitiesItem task) {
                 Log.e("OnTaskClicked",task.getLessons()+"Quiz");
-                Intent quizactivity = new Intent(context, QuizActivity.class);
+                Intent quizactivity = new Intent(context, QuizActivity2.class);
                 startActivity(quizactivity);
             }
         });

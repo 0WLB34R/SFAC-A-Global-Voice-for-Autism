@@ -27,7 +27,7 @@ public class Questions2 {
 
 
     public Questions2(int id, String questionText, String questionNumber, String A1 ,
-                      String A2, String A3, String A4, String A5){
+                      String A2, String A3, String A4){
         this.id= id;
         this.A1= A1;
         this.A2= A2;

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_xhdpi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".QuizActivity2"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CommunityActivity"
@@ -41,8 +42,8 @@
             android:label="@string/about_us_section"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".PopUpVideoActivity"
+        <activity
+            android:name=".PopUpVideoActivity"
             android:label="@string/extra_videos"
             android:parentActivityName=".VideoListActivity"
             android:screenOrientation="portrait" />
@@ -51,6 +52,7 @@
             android:label="@string/quiz"
             android:parentActivityName=".VideoListActivity"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
