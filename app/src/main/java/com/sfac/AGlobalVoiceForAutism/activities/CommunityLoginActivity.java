@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -48,12 +49,12 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
 
         DataBase = new DataBaseHelper(this);
 
-        saveLog = userpreferences.getBoolean("saveLog", false);
-        if (saveLog == true) {
+        //saveLog = userpreferences.getBoolean("saveLog", false);
+       /*/ if (saveLog == true) {
             username.setText(userpreferences.getString("user", ""));
             password.setText(userpreferences.getString("pass", ""));
             remembermecheckbox.setChecked(true);
-        }
+        }/*/
 
         signinlog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,9 +70,15 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
                     DataBaseHelper dataBaseHelper = new DataBaseHelper(CommunityLoginActivity.this);
                     if (remembermecheckbox.isChecked()) {
                         dataBaseHelper.checkusernamepassword(user,pass);
+                        userpreferences = PreferenceManager.getDefaultSharedPreferences(CommunityLoginActivity.this);
+                        editor = getSharedPreferences("loginprefs", MODE_PRIVATE).edit();
+                        editor.putString("user", user.toString());
+                        editor.putString("pass", pass.toString());
+                        editor.commit();
+
                     } else {
                         //editor.clear();
-                        editor.commit();
+
                     }
                     if (checkuserpass == true) {
                         Toast.makeText(CommunityLoginActivity.this, "Sign In successful", Toast.LENGTH_SHORT).show();
@@ -84,7 +91,7 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
 
 
                     } else {
-                        Toast.makeText(CommunityLoginActivity.this, "Invalid Credintials", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CommunityLoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
 
