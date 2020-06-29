@@ -30,15 +30,10 @@ public class WhatsappListActivity extends AppCompatActivity {
 
     public void toWhatsapp(View view){
         Intent wpp = new Intent(Intent.ACTION_VIEW);
-        wpp.setData(Uri.parse("https://chat.whatsapp.com/F0I6pS6vKcB8RzGfdEMm7y"));
+        wpp.setData(Uri.parse("https://chat.whatsapp.com/GKh3AvtygncALOhJdDW8tu"));
             startActivity(wpp);
     }
     public void toWhatsapp2(View view){
-        Intent wpp = new Intent(Intent.ACTION_VIEW);
-        wpp.setData(Uri.parse("https://chat.whatsapp.com/F0I6pS6vKcB8RzGfdEMm7y"));
-        startActivity(wpp);
-    }
-    public void toWhatsapp3(View view){
         Intent wpp = new Intent(Intent.ACTION_VIEW);
         wpp.setData(Uri.parse("https://chat.whatsapp.com/F0I6pS6vKcB8RzGfdEMm7y"));
         startActivity(wpp);
