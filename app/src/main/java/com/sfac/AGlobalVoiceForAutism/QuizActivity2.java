@@ -87,8 +87,9 @@ public class QuizActivity2 extends AppCompatActivity {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int tam = verified.length;
-                Toast.makeText(context, tam,Toast.LENGTH_SHORT).show();
+                int num = verified.length;
+                String n = num+"";
+                Toast.makeText(context,n,Toast.LENGTH_SHORT).show();
             }
         });
     }
