@@ -6,7 +6,7 @@ public class Questions {
     private String description;
     private List<Answers> answers;
 
-    public Questions(String description) {
+    public Questions(String description)  {
         this.description = description;
     }
 

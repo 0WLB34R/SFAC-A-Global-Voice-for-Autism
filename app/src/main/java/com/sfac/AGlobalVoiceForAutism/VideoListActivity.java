@@ -57,7 +57,12 @@ public class VideoListActivity extends AppCompatActivity {
            @Override
            public void onTaskVideoClicked(ActivitiesItem task) {
               Log.e("OnTaskVideoClicked", task.getLessons()+"Play_video");
-              Intent videoIntent = new Intent(context, VideoActivity.class);
+              Intent videoIntent;
+              if(task.getId().equals("Hardcoded")){
+                  videoIntent = new Intent(context, HardcodedVideoActivity.class);
+              }else{
+                  videoIntent = new Intent(context, VideoActivity.class);
+              }
               String videoString = new Gson().toJson(task);
               videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
               startActivity(videoIntent);
@@ -65,7 +70,12 @@ public class VideoListActivity extends AppCompatActivity {
            @Override
             public void onTaskQuizClicked(ActivitiesItem task) {
                 Log.e("OnTaskClicked",task.getLessons()+"Quiz");
-                Intent quizactivity = new Intent(context, QuizActivity.class);
+                Intent quizactivity;
+                if(task.getId().equals("Hardcoded")){
+                    quizactivity = new Intent(context, QuizActivity2.class);
+                }else{
+                    quizactivity = new Intent(context,QuizActivity.class);
+                }
                 startActivity(quizactivity);
             }
         });
@@ -77,19 +87,10 @@ public class VideoListActivity extends AppCompatActivity {
             }
         });
     }
-    private void fillvideoList(){
-       items.add(new ActivitiesItem("MeO8VIx-jXA","Elmo",".jpg",
-               lesson+" 1",R.drawable.elmo_1));
-       items.add(new ActivitiesItem("vSYadh2xmcI","ElmoLittle",".jpg",
-               lesson+" 2",R.drawable.elmo_2));
-       items.add(new ActivitiesItem("3","Video_3",".jpg",
-               lesson+" 3",R.drawable.activities));
-       items.add(new ActivitiesItem("4","Video_4",".jpg",
-               lesson+" 4",R.drawable.worksheet));
-       items.add(new ActivitiesItem("5","Video_5",".jpg",
-               lesson+" 5",R.drawable.activities));
-       items.add(new ActivitiesItem("6","Video_6",".jpg",
-               lesson+" 6",R.drawable.worksheet));
+    private void fillvideoList() {
+        for (ActivitiesItem item : VideoListSingleton.getInstance().activityItems){
+            items.add(item);
+        }
 
     }
 }
