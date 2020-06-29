@@ -121,8 +121,8 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     }
 
-    public void gotoQuiz(View view) {
-        Intent intent = new Intent(this, QuizActivity.class);
+    public void gotoQuiz(View view){
+        Intent intent = new Intent(this,QuizActivity2.class);
         startActivity(intent);
 
     }
