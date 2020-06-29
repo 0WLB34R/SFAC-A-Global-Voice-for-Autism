@@ -31,8 +31,8 @@ public class CommunityActivity extends AppCompatActivity {
         imgBtnWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent wpp = new Intent(context, WhatsappListActivity.class);
-                startActivity(wpp);
+                Intent wppG = new Intent(context, WhatsappListActivity.class);
+                startActivity(wppG);
             }
         });
 
@@ -47,10 +47,7 @@ public class CommunityActivity extends AppCompatActivity {
     }
 
     public void toLocalorg(View view){
-        Intent intOrg = new Intent(Intent.ACTION_VIEW);
-        intOrg.setData(Uri.parse("https://www.aglobalvoiceforautism.org"));
-        if(intOrg.resolveActivity(getPackageManager())!=null){
-            startActivity(intOrg);
-        }
+        Intent intOrg = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.aglobalvoiceforautism.org"));
+        startActivity(intOrg);
     }
 }
