@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,6 +23,7 @@ import com.sfac.AGlobalVoiceForAutism.R;
 import com.sfac.AGlobalVoiceForAutism.sql.DataBaseHelper;
 
 public class CommunityLoginActivity  extends AppCompatActivity implements onClickListener{
+    private static final String LOG = CommunityLoginActivity.class.getName();
     private EditText username, password;
     private Button signinlog;
     DataBaseHelper DataBase;
@@ -97,6 +99,35 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
 
             }
         });
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 
 }
