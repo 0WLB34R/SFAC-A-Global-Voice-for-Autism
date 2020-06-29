@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,9 +14,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.sfac.AGlobalVoiceForAutism.adapter.QuizRecyclerViewAdapter;
 import com.sfac.AGlobalVoiceForAutism.callBack.QuizCallBack;
+import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
 import com.sfac.AGlobalVoiceForAutism.model.Questions2;
+import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +31,7 @@ public class QuizActivity2 extends AppCompatActivity {
      private QuizRecyclerViewAdapter adapter;
      private List<Questions2> questions = new ArrayList<>();
      private Button uploadButton;
+     private ActivitiesItem aI;
      private int[] verified;
 
 
@@ -40,7 +45,7 @@ public class QuizActivity2 extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
         initViews();
         addEvents();
-        fillQuizList();
+        receiveValues();
     }
     private void initViews(){
         recyclerView = findViewById(R.id.quizListView);
@@ -93,7 +98,19 @@ public class QuizActivity2 extends AppCompatActivity {
             }
         });
     }
-    private void fillQuizList(){
+    private void receiveValues(){
+        Intent intent = getIntent();
+        if (intent.hasExtra(Constants.INTENT_KEY_QUIZ)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_QUIZ);
+            aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+        }
+        if(aI.getNum()== 1){
+            fillQuizList1();
+        }else if(aI.getNum()==2){
+            fillQuizList2();
+        }
+    }
+    private void fillQuizList1(){
         questions.add(new Questions2(1,"How many is 2+2?","1",
                 "5","8","3","4"));
         questions.add(new Questions2(2,"What color is the red car","2",
@@ -103,5 +120,22 @@ public class QuizActivity2 extends AppCompatActivity {
         questions.add(new Questions2(4, "How old is Queen Elizabeth?",
                 "4", "90","15","65","70"));
         verified = new int[questions.size()+1];
+    }
+    private void fillQuizList2(){
+        questions.add(new Questions2(1,"Who was Alan Turing?","1",
+                "A dancer","A theoretical computer scientist","A famous chef",
+                "A famous Actor"));
+        questions.add(new Questions2(2,"\n" +
+                "What color is Napoleon's white horse?","2",
+                "black","Grey","White","Pink"));
+        questions.add(new Questions2(3,"Who is the founder of Apple?",
+                "3","Steve Jobs","Steve Wozniak","BOTH",
+                "None is correct"));
+        questions.add(new Questions2(4, "Why she doesn't love me?",
+                "4", "I don't Know","Because she loves another",
+                "She is just your friend","Ask her"));
+        verified = new int[questions.size()+1];
+        questions.add(new Questions2(5,"Who was Jhon Von Neumann?","5",
+                "A Tailor","An American President","A fishman","It was mathematical"));
     }
 }

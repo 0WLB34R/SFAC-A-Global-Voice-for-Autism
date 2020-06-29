@@ -76,6 +76,8 @@ public class VideoListActivity extends AppCompatActivity {
                 }else{
                     quizactivity = new Intent(context,QuizActivity.class);
                 }
+                String quizNumber = new Gson().toJson(task);
+                quizactivity.putExtra(Constants.INTENT_KEY_QUIZ,quizNumber );
                 startActivity(quizactivity);
             }
         });
