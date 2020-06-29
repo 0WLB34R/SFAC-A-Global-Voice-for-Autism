@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.sfac.AGlobalVoiceForAutism.activities.CommunityMainActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Context context;
     private ImageButton button;
@@ -38,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentCommunity = new Intent(context, CommunityActivity.class);
-                startActivity(intentCommunity);
+                Intent intentCommunityRegistration = new Intent(context, CommunityMainActivity.class);
+                startActivity(intentCommunityRegistration);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
