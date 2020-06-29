@@ -36,6 +36,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     //String filename = "Elmo.jpg";
     //String videoId = "MeO8VIx-jXA";
     ActivitiesItem aI;
+    private Context context;
 
 
     @Override
@@ -45,6 +46,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         setContentView(R.layout.activity_video);
         playerView = (YouTubePlayerView) findViewById(R.id.ytplayerView);
         playerView.initialize(YouTubeConfig.getApiKey(), this);
+        context = this;
         //check existence of video so the button can change value
         //change download to delete based on variable
         receiveValues();
@@ -122,7 +124,12 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     }
 
     public void gotoQuiz(View view){
-        Intent intent = new Intent(this,QuizActivity2.class);
+        Intent intent;
+        if(aI.getId().equals("Hardcoded")){
+            intent = new Intent(context, QuizActivity2.class);
+        }else{
+            intent = new Intent(context,QuizActivity.class);
+        }
         startActivity(intent);
 
     }
