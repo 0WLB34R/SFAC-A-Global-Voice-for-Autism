@@ -11,11 +11,11 @@ public class VideoListSingleton {
     private VideoListSingleton(){
         score = 0; //score needs to be saved probably in database for unlocking stuff
         activityItems.add(new ActivitiesItem(1,"Hardcoded","lesson_one",
-                ".jpg", "lesson # 1",R.drawable.elmo_1));
+                ".jpg", "lesson # 1",R.drawable.activities));
         activityItems.add(new ActivitiesItem(0,"vSYadh2xmcI","ElmoLittle",
-                ".jpg", "lesson # 2",R.drawable.elmo_2));
+                ".jpg", "lesson # 2",R.drawable.elmo_1));
         activityItems.add(new ActivitiesItem(0,"MeO8VIx-jXA","Elmo",
-                ".jpg", "lesson # 3",R.drawable.activities));
+                ".jpg", "lesson # 3",R.drawable.elmo_2));
         activityItems.add(new ActivitiesItem(0,"4","Video_4",
                 ".jpg", "lesson # 4",R.drawable.worksheet));
         activityItems.add(new ActivitiesItem(0,"5","Video_5",
@@ -30,6 +30,20 @@ public class VideoListSingleton {
 
         return instance;
     }
+
+    public static String getURL(String a){
+        String url = "https://forms.gle/x6AmfJSij5YYbeCT6";
+        switch (a){
+            case "vSYadh2xmcI":
+                url = "https://forms.gle/x6AmfJSij5YYbeCT6";
+                break;
+            case "MeO8VIx-jXA":
+                url = "https://forms.gle/6ifG7FD5LTzYwWdy9";
+                break;
+        }
+        return url;
+    }
+
 }
 
 
