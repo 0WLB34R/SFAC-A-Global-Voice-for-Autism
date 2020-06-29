@@ -43,6 +43,11 @@
             android:parentActivityName=".activities.CommunityLoginActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".WhatsappListActivity"
+            android:label="Whatsapp List"
+            android:parentActivityName=".CommunityActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".VideoActivity"
             android:label="Video"
             android:parentActivityName=".VideoListActivity"
