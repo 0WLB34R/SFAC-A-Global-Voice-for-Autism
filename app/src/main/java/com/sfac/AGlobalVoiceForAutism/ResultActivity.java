@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
+    private static final String LOG = ResultActivity.class.getName();
     private Context context;
     private Button menuButton;
     private TextView notes;
@@ -60,5 +62,34 @@ public class ResultActivity extends AppCompatActivity {
         }
         int total = results.length-1;
         notes.setText(AnswerCount+ "/"+total);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 }

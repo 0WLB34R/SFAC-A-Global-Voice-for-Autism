@@ -26,7 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VideoListActivity extends AppCompatActivity {
-     private Context context;
+    private static final String LOG = VideoListActivity.class.getName();
+    private Context context;
      private RecyclerView taskRecyclerView;
      private ActivitiesRecyclerViewAdapter adapter;
      private List<ActivitiesItem> items = new ArrayList<>();
@@ -120,6 +121,35 @@ public class VideoListActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
         boolean unlocked = sp.getBoolean("unlocked",false);
         return unlocked;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 
 }

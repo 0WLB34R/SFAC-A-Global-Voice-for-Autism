@@ -6,12 +6,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CommunityActivity extends AppCompatActivity {
+    private static final String LOG = CommunityActivity.class.getName();
     private Context context;
     private ImageButton imgBtnWhatsapp;
 
@@ -49,5 +51,34 @@ public class CommunityActivity extends AppCompatActivity {
     public void toLocalorg(View view){
         Intent intOrg = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.aglobalvoiceforautism.org"));
         startActivity(intOrg);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 }
