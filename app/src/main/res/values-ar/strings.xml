@@ -42,4 +42,5 @@
     <string name="sign_in">تسجيل الدخول</string>
     <string name="Username">سم المستخدم </string>
     <string name="Password">كلمه الس</string>
+    <string name="INCLUDE2020" />
 </resources>

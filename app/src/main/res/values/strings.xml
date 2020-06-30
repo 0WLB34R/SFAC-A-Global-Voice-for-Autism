@@ -62,5 +62,6 @@
     <string name="sign_in">Sign In</string>
     <string name="Username"> Username</string>
     <string name="Password">Password</string>
+    <string name="INCLUDE2020" />
 
 </resources>
