@@ -43,7 +43,10 @@
         simply been born somewhere else. A Global Voice for Autism was founded on the principle that
         ALL autistic children should have access to education, community and support, no matter
         where they live."</string>
-    <string name="welcome_to_the_community_here_you_can_join_us_in_our_different_social_media_groups_and_keep_in_touch_for_new_updates_share_experiences_and_build_a_stronger_community_this_area_is_intended_to_be_just_for_parents_if_its_your_first_time_here_please_sign_up_enjoy_the_experience">
+    <string name="welcome">welcome to the community here you can join us in our different social
+        media groups and keep in touch for new updates share experiences and build a stronger
+        community this area is intended to be just for parents if its your first time here please
+        sign up enjoy the experience.
        </string>
     <string name="username">UserName</string>
     <string name="password">Password</string>
