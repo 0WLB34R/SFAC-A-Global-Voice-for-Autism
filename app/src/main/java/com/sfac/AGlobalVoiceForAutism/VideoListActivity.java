@@ -33,7 +33,7 @@ public class VideoListActivity extends AppCompatActivity {
      private ActivitiesRecyclerViewAdapter adapter;
      private List<ActivitiesItem> items = new ArrayList<>();
      private Button extraVideo;
-     private String lesson ;
+
 
      private static final String SHARED_PREF = "sharedPrefs";
 
@@ -42,7 +42,6 @@ public class VideoListActivity extends AppCompatActivity {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_video_list);
      context = this;
-     lesson = getString(R.string.lesson_section);
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#466060"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
      initviews();
@@ -111,7 +110,7 @@ public class VideoListActivity extends AppCompatActivity {
         DataBaseHelperVideos mDataBaseHelperVideos = new DataBaseHelperVideos(this);
         Cursor data = mDataBaseHelperVideos.getData();
         while (data.moveToNext()) {
-            items.add(new ActivitiesItem(0, data.getString(0), data.getString(1), ".jpg", "Extra", R.drawable.elmo_1));
+            items.add(new ActivitiesItem(0, data.getString(0), data.getString(1), ".jpg", getString(R.string.extra), R.drawable.elmo_1));
         }
 
     }

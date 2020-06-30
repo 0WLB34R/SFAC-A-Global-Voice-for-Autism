@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AGVFA</string>
+    <string name="extra">إضافي</string>
     <string name="com_section">الجماعة</string>
     <string name="loading">تحميل</string>
     <string name="video_section">شغل الفيديو</string>
