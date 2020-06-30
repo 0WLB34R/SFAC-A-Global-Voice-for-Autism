@@ -3,6 +3,7 @@ package com.sfac.AGlobalVoiceForAutism.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ import com.sfac.AGlobalVoiceForAutism.R;
 import com.sfac.AGlobalVoiceForAutism.sql.DataBaseHelper;
 
 public class CommunityMainActivity extends AppCompatActivity {
+    private static final String LOG = CommunityMainActivity.class.getName();;
     private Context context;
     EditText username, password, repassword, name, age, country, email;
     Button singup, signin;
@@ -86,5 +88,34 @@ public class CommunityMainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 }

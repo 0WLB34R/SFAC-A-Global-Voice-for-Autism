@@ -27,4 +27,22 @@
     <string name="take_quiz">تقدم للإختبار !</string>
     <string name="video_menu">قائمة مقاطع الفيديو</string>
     <string name="summit_answers">تحميل الإجابات</string>
+    <string name="welcome_to_the_community_here_you_can_join_us_in_our_different_social_media_groups_and_keep_in_touch_for_new_updates_share_experiences_and_build_a_stronger_community_this_area_is_intended_to_be_just_for_parents_if_its_your_first_time_here_please_sign_up_enjoy_the_experience">
+       مرحبًا بك في المجتمع!
+        هنا يمكنك الانضمام إلينا في مجموعات وسائل التواصل الاجتماعي المختلفة والبقاء على اتصال للحصول على التحديثات الجديدة ومشاركة الخبرات وبناء مجتمع أقوى :) هذه المنطقة مخصصة للآباء فقط ؛
+        إذا كانت هذه هي المرة الأولى هنا ، يرجى الاشتراك. استمتع بالتجربة !</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمه السر</string>
+    <string name="confirm_your_password">كد رقمك السري</string>
+    <string name="enter_your_full_name">أدخل اسمك الكامل</string>
+    <string name="age">عمر</string>
+    <string name="country">بلد</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="register">لبريد الإلكتروني</string>ا
+    <string name="already_registered_sign_in_here">مسجل بالفعل؟ تسجيل الدخول هنا</string>
+
+    <string name="remember_me">تذكرنى</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="Username">سم المستخدم </string>
+    <string name="Password">كلمه الس</string>
 </resources>

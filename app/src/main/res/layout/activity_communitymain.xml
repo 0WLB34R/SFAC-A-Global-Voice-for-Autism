@@ -28,10 +28,7 @@ android:padding="10dp"
             android:gravity="center"
             android:layout_above="@id/username"
             android:padding="5dp"
-            android:text="Welcome to the community! here you can join us in our different social media groups and keep in touch for new updates, share experiences, and build a stronger community :)
-this area is intended to be just for parents; if its your first time here please sign up.
-Enjoy the experience!
-"
+            android:text="@string/welcome_to_the_community_here_you_can_join_us_in_our_different_social_media_groups_and_keep_in_touch_for_new_updates_share_experiences_and_build_a_stronger_community_this_area_is_intended_to_be_just_for_parents_if_its_your_first_time_here_please_sign_up_enjoy_the_experience"
             android:textSize="16sp"
             android:background="@color/colorQuiz">
 
@@ -46,7 +43,7 @@ Enjoy the experience!
         android:layout_marginTop="160dp"
         android:background="#529155"
 
-        android:hint="UserName"
+        android:hint="@string/username"
         android:textColor="#1E1C1C"
         android:textColorHighlight="#E61919">
 
@@ -56,7 +53,7 @@ Enjoy the experience!
        android:id="@+id/password"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:hint="Password"
+       android:hint="@string/password"
        android:layout_marginTop="20dp"
        android:layout_below="@id/username"
        android:background="@color/colorAccent">
@@ -66,7 +63,7 @@ Enjoy the experience!
        android:id="@+id/repassword"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:hint="Confirm your Password"
+    android:hint="@string/confirm_your_password"
     android:layout_marginTop="20dp"
     android:layout_below="@id/password"
          android:background="@color/backgroundColor2">
@@ -76,7 +73,7 @@ Enjoy the experience!
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your full name"
+        android:hint="@string/enter_your_full_name"
         android:layout_marginTop="20dp"
         android:layout_below="@id/repassword"
         android:background="#E6DD5F">
@@ -86,7 +83,7 @@ Enjoy the experience!
         android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Age"
+        android:hint="@string/age"
         android:layout_marginTop="20dp"
         android:layout_below="@id/name"
         android:background="#F47268">
@@ -96,7 +93,7 @@ Enjoy the experience!
         android:id="@+id/country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Country"
+        android:hint="@string/country"
         android:layout_marginTop="20dp"
         android:layout_below="@id/age"
         android:background="#A879FB">
@@ -106,7 +103,7 @@ Enjoy the experience!
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/email"
         android:layout_marginTop="20dp"
         android:layout_below="@id/country"
         android:background="#F36897">
@@ -116,7 +113,7 @@ Enjoy the experience!
         android:id="@+id/SignUp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="Register"
+        android:text="@string/register"
         android:background="#4CAF50"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/email">
@@ -127,7 +124,7 @@ Enjoy the experience!
         android:id="@+id/SignIn"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="Already registered? Sign In here"
+        android:text="@string/already_registered_sign_in_here"
         android:background="#FFC107"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/SignUp">

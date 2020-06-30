@@ -51,12 +51,6 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
 
         DataBase = new DataBaseHelper(this);
 
-        //saveLog = userpreferences.getBoolean("saveLog", false);
-       /*/ if (saveLog == true) {
-            username.setText(userpreferences.getString("user", ""));
-            password.setText(userpreferences.getString("pass", ""));
-            remembermecheckbox.setChecked(true);
-        }/*/
 
         signinlog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +73,7 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
                         editor.commit();
 
                     } else {
-                        //editor.clear();
+                        editor.clear();
 
                     }
                     if (checkuserpass == true) {
@@ -87,9 +81,6 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
                         Intent intent = new Intent(getApplicationContext(), CommunityActivity.class);
                         startActivity(intent);
 
-
-                        //username.getText().clear();
-                        //password.getText().clear();
 
 
                     } else {
