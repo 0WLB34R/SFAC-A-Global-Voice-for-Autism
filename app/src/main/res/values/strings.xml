@@ -60,6 +60,6 @@
     <string name="remember_me">Remember me</string>
     <string name="sign_in">Sign In</string>
     <string name="Username"> Username</string>
-    <string name="Password" >Password</string>
+    <string name="Password">Password</string>
 
 </resources>

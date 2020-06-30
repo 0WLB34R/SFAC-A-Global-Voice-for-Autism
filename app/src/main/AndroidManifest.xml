@@ -22,20 +22,14 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activities.CommunityMainActivity"
             android:label="CommunityRegisterPage"
-            android:parentActivityName=".CommunityActivity">
-
-        </activity>
+            android:parentActivityName=".CommunityActivity"/>
         <activity
             android:name=".activities.CommunityLoginActivity"
             android:label="CommunityLogInPage"
-            android:parentActivityName=".CommunityActivity">
-
-        </activity>
-
+            android:parentActivityName=".CommunityActivity"/>
         <activity
             android:name=".CommunityActivity"
             android:label="@string/com_section"
@@ -75,14 +69,19 @@
             android:name=".QuizActivity2"
             android:label="@string/quiz"
             android:parentActivityName=".VideoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HardcodedVideoActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="Offline Videos"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="Results"
+            android:parentActivityName=".VideoListActivity"
             android:screenOrientation="portrait"/>
 
 
-        <activity android:name=".HardcodedVideoActivity"
-            android:label="Offline Videos"
-            android:configChanges="orientation|screenSize"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
