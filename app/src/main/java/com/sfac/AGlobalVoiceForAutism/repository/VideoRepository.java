@@ -30,10 +30,10 @@ public class VideoRepository {
         return null;
     }
 
-
-
     private void fillvideoPrincipalList(){
         aI.add(new ActivitiesItem(1,"KcBmrnBmdzM","Khokha",".jpg",
                 "NOT", R.drawable.elmo_1));
+        aI.add(new ActivitiesItem(2,"gztcdTZwUCg","SesameJapan",".jpg",
+                "NOT", R.drawable.elmo_2));
     }
 }

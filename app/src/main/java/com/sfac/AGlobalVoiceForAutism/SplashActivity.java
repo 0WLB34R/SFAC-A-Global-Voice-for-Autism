@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 public class SplashActivity extends AppCompatActivity {
