@@ -10,7 +10,7 @@ public class VideoListSingleton {
     public ArrayList<ActivitiesItem> activityItems=new ArrayList<ActivitiesItem>();;
     private VideoListSingleton(){
         score = 0; //score needs to be saved probably in database for unlocking stuff
-        activityItems.add(new ActivitiesItem(1,"Hardcoded","lesson_one",
+        activityItems.add(new ActivitiesItem(2,"Hardcoded","lesson_one",
                 ".jpg", "lesson # 1",R.drawable.activities));
         activityItems.add(new ActivitiesItem(0,"vSYadh2xmcI","ElmoLittle",
                 ".jpg", "lesson # 2",R.drawable.elmo_1));

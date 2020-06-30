@@ -94,6 +94,8 @@ public class QuizActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 if(validateAnswers()){
                     Intent result = new Intent(context, ResultActivity.class);
+                    result.putExtra("results",verified);
+                    result.putExtra("Quiz num",aI.getNum());
                     startActivity(result);
                 }
             }
@@ -126,7 +128,7 @@ public class QuizActivity2 extends AppCompatActivity {
         questions.add(new Questions2(1,"Who was Alan Turing?","1",
                 "A dancer","A theoretical computer scientist","A famous chef",
                 "A famous Actor"));
-        questions.add(new Questions2(2,"\n" +
+        questions.add(new Questions2(2,
                 "What color is Napoleon's white horse?","2",
                 "black","Grey","White","Pink"));
         questions.add(new Questions2(3,"Who is the founder of Apple?",
