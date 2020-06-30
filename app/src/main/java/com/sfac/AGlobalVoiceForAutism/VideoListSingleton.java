@@ -10,25 +10,24 @@ public class VideoListSingleton {
     private static VideoListSingleton instance = null;
     public ArrayList<ActivitiesItem> activityItems=new ArrayList<ActivitiesItem>();
     private Context context;
-    private String lesson = context.getString(R.string.lesson_section);
 
-    private VideoListSingleton(){
+    private VideoListSingleton(Context c){
         activityItems.add(new ActivitiesItem(1,"Hardcoded","lesson_one",
-                ".jpg",  lesson+"# 1",R.drawable.activities));
+                ".jpg",  c.getString(R.string.lesson_section)+" 1",R.drawable.activities));
         activityItems.add(new ActivitiesItem(2,"vSYadh2xmcI","ElmoLittle",
-                ".jpg", lesson+"# 2",R.drawable.elmo_1));
+                ".jpg", c.getString(R.string.lesson_section)+" 2",R.drawable.elmo_1));
         activityItems.add(new ActivitiesItem(3,"MeO8VIx-jXA","Elmo",
-                ".jpg", lesson+"# 3",R.drawable.elmo_2));
+                ".jpg", c.getString(R.string.lesson_section)+" 3",R.drawable.elmo_2));
         activityItems.add(new ActivitiesItem(4,"4","Video_4",
-                ".jpg", lesson+"# 4",R.drawable.worksheet));
+                ".jpg", c.getString(R.string.lesson_section)+" 4",R.drawable.worksheet));
         activityItems.add(new ActivitiesItem(5,"5","Video_5",
-                ".jpg", lesson+"# 5",R.drawable.activities));
+                ".jpg", c.getString(R.string.lesson_section)+" 5",R.drawable.activities));
         activityItems.add(new ActivitiesItem(6,"6","Video_6",
-                ".jpg", lesson+"# 6",R.drawable.worksheet));
+                ".jpg", c.getString(R.string.lesson_section)+" 6",R.drawable.worksheet));
     }
-    public static VideoListSingleton getInstance(){
+    public static VideoListSingleton getInstance(Context c){
         if (instance == null)
-            instance = new VideoListSingleton();
+            instance = new VideoListSingleton(c);
 
         return instance;
     }

@@ -104,7 +104,7 @@ public class VideoListActivity extends AppCompatActivity {
         });
     }
     private void fillvideoList() {
-        for (ActivitiesItem item : VideoListSingleton.getInstance().activityItems){
+        for (ActivitiesItem item : VideoListSingleton.getInstance(this).activityItems){
             items.add(item);
         }
         DataBaseHelperVideos mDataBaseHelperVideos = new DataBaseHelperVideos(this);
