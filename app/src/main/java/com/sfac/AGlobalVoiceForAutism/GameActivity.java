@@ -184,4 +184,5 @@ public class GameActivity extends AppCompatActivity {
 
         quiz.setQuestions(questions);
     }
+
 }

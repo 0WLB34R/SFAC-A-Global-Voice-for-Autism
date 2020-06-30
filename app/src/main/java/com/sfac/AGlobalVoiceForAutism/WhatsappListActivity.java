@@ -5,12 +5,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WhatsappListActivity extends AppCompatActivity {
+    private static final String LOG = WhatsappListActivity.class.getName();
     private Button b1;
     private Button b2;
     private Button b3;
@@ -37,6 +39,35 @@ public class WhatsappListActivity extends AppCompatActivity {
         Intent wpp = new Intent(Intent.ACTION_VIEW);
         wpp.setData(Uri.parse("https://chat.whatsapp.com/F0I6pS6vKcB8RzGfdEMm7y"));
         startActivity(wpp);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 
 }

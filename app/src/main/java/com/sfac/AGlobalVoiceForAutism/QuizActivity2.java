@@ -92,9 +92,12 @@ public class QuizActivity2 extends AppCompatActivity {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num = verified.length;
-                String n = num+"";
-                Toast.makeText(context,n,Toast.LENGTH_SHORT).show();
+                if(validateAnswers()){
+                    Intent result = new Intent(context, ResultActivity.class);
+                    result.putExtra("results",verified);
+                    result.putExtra("Quiz num",aI.getNum());
+                    startActivity(result);
+                }
             }
         });
     }
@@ -125,7 +128,7 @@ public class QuizActivity2 extends AppCompatActivity {
         questions.add(new Questions2(1,"Who was Alan Turing?","1",
                 "A dancer","A theoretical computer scientist","A famous chef",
                 "A famous Actor"));
-        questions.add(new Questions2(2,"\n" +
+        questions.add(new Questions2(2,
                 "What color is Napoleon's white horse?","2",
                 "black","Grey","White","Pink"));
         questions.add(new Questions2(3,"Who is the founder of Apple?",
@@ -134,8 +137,18 @@ public class QuizActivity2 extends AppCompatActivity {
         questions.add(new Questions2(4, "Why she doesn't love me?",
                 "4", "I don't Know","Because she loves another",
                 "She is just your friend","Ask her"));
-        verified = new int[questions.size()+1];
         questions.add(new Questions2(5,"Who was Jhon Von Neumann?","5",
                 "A Tailor","An American President","A fishman","It was mathematical"));
+        verified = new int[questions.size()+1];
+    }
+    private boolean validateAnswers(){
+        for(int i = 1 ; i<verified.length ;i++) {
+            if (verified[i] == 0) {
+                Toast.makeText(context, "Please answer all the questions",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+       return true;
     }
 }
