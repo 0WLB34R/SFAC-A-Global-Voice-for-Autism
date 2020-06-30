@@ -1,6 +1,7 @@
 package com.sfac.AGlobalVoiceForAutism;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,10 +20,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
 import com.sfac.AGlobalVoiceForAutism.R;
+import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
 import com.sfac.AGlobalVoiceForAutism.model.Answers;
 import com.sfac.AGlobalVoiceForAutism.model.Questions;
 import com.sfac.AGlobalVoiceForAutism.model.Quiz;
+import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +38,7 @@ public class QuizActivity  extends AppCompatActivity {
     private  Quiz quiz;
     private int Score=0;
     private int incorrectScore=0;
+    private ActivitiesItem aI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,15 @@ public class QuizActivity  extends AppCompatActivity {
         context = this;
         WebView myWebView = new WebView(this);
         setContentView(myWebView);
-        myWebView.loadUrl("https://forms.gle/6ifG7FD5LTzYwWdy9");
+        receiveValues();
+        myWebView.loadUrl(VideoListSingleton.getURL(aI.getId()));
+    }
+
+    private void receiveValues() {
+        Intent intent = getIntent();
+        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
+            aI = new Gson().fromJson(userObj, ActivitiesItem.class);
+        }
     }
 }

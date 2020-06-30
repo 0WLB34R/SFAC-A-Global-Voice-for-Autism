@@ -33,7 +33,7 @@ public class VideoRepository {
 
 
     private void fillvideoPrincipalList(){
-        aI.add(new ActivitiesItem("KcBmrnBmdzM","Khokha",".jpg",
+        aI.add(new ActivitiesItem(0,"KcBmrnBmdzM","Khokha",".jpg",
                 "NOT", R.drawable.elmo_1));
     }
 }

@@ -124,14 +124,10 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     }
 
     public void gotoQuiz(View view){
-        Intent intent;
-        if(aI.getId().equals("Hardcoded")){
-            intent = new Intent(context, QuizActivity2.class);
-        }else{
-            intent = new Intent(context,QuizActivity.class);
-        }
-        startActivity(intent);
-
+        Intent quizIntent = new Intent(context, QuizActivity.class);
+        String videoString = new Gson().toJson(aI);
+        quizIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
+        startActivity(quizIntent);
     }
 
     public void downloadVideo(View view) {

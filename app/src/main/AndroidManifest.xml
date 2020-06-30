@@ -22,7 +22,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" />
 
         <activity
             android:name=".activities.CommunityMainActivity"
@@ -41,6 +40,11 @@
             android:name=".CommunityActivity"
             android:label="@string/com_section"
             android:parentActivityName=".activities.CommunityLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WhatsappListActivity"
+            android:label="Whatsapp List"
+            android:parentActivityName=".CommunityActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VideoActivity"
