@@ -55,7 +55,7 @@
     <string name="register">Register</string>
     <string name="already_registered_sign_in_here">Already registered? Sign In here</string>
     <string name="remember_me">Remember me</string>
-    <string name="sign_in"></string>Sign In
+    <string name="sign_in">Sign In</string>
     <string name="Username"> Username</string>
     <string name="Password" >Password</string>
 
