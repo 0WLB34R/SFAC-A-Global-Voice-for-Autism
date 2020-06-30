@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AGVFA</string>
     <string name="extra">Extra</string>
-    <string name="loading">loading</string>
+    <string name="loading">Loading</string>
     <string name="com_section">Community</string>
     <string name="edu_section">Education</string>
     <string name="about_us_section">About us</string>
