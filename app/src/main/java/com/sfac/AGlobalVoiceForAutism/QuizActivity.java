@@ -53,8 +53,8 @@ public class QuizActivity  extends AppCompatActivity {
 
     private void receiveValues() {
         Intent intent = getIntent();
-        if (intent.hasExtra(Constants.INTENT_KEY_ACTIVITY)) {
-            String userObj = intent.getStringExtra(Constants.INTENT_KEY_ACTIVITY);
+        if (intent.hasExtra(Constants.INTENT_KEY_QUIZ)) {
+            String userObj = intent.getStringExtra(Constants.INTENT_KEY_QUIZ);
             aI = new Gson().fromJson(userObj, ActivitiesItem.class);
         }
     }
