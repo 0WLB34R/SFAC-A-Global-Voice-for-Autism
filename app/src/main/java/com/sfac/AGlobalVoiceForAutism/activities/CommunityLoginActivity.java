@@ -1,21 +1,13 @@
 package com.sfac.AGlobalVoiceForAutism.activities;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sfac.AGlobalVoiceForAutism.CommunityActivity;
@@ -27,24 +19,38 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
     private EditText username, password;
     private Button signinlog;
     DataBaseHelper DataBase;
-    private Context context;
-    private CheckBox remembermecheckbox;
     private SharedPreferences userpreferences;
     private SharedPreferences.Editor editor;
-    private Boolean saveLog;
-    private static final String PREF_NAME = "prefs";
+
     private static final String KEY_REMEMBER = "remember";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_PASS = "password";
 
+    private static final String SHARED_PREF = "sharedPrefs";
+    private static final String S1 = "s1";
+    private Switch s1 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle bundle = getIntent().getExtras();
+        int filterOn = bundle.getInt("filter_on");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logincommunity);
+        s1 = (Switch) findViewById(R.id.disablefilter);
+        if(filterOn == 1){
+            SharedPreferences sp = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean(S1, false);
+            editor.apply();
+        }
+        s1.setChecked(loadData());
+        if(loadData()){
+            Intent intent = new Intent(getApplicationContext(), CommunityActivity.class);
+            startActivity(intent);
+        }
         username = (EditText) findViewById((R.id.usernamelog));
         password = (EditText) findViewById((R.id.passwordlog));
         signinlog = (Button) findViewById((R.id.signinlog));
-        remembermecheckbox = (CheckBox) findViewById(R.id.remembermecheckbox);
 
         userpreferences = getSharedPreferences("loginprefs", MODE_PRIVATE);
         editor = userpreferences.edit();
@@ -63,26 +69,11 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
 
                 } else {
                     Boolean checkuserpass = DataBase.checkusernamepassword(user, pass);
-                    DataBaseHelper dataBaseHelper = new DataBaseHelper(CommunityLoginActivity.this);
-                    if (remembermecheckbox.isChecked()) {
-                        dataBaseHelper.checkusernamepassword(user,pass);
-                        userpreferences = PreferenceManager.getDefaultSharedPreferences(CommunityLoginActivity.this);
-                        editor = getSharedPreferences("loginprefs", MODE_PRIVATE).edit();
-                        editor.putString("user", user.toString());
-                        editor.putString("pass", pass.toString());
-                        editor.commit();
-
-                    } else {
-                        editor.clear();
-
-                    }
-                    if (checkuserpass == true) {
+                    if (checkuserpass) {
+                        saveData();
                         Toast.makeText(CommunityLoginActivity.this, "Sign In successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), CommunityActivity.class);
                         startActivity(intent);
-
-
-
                     } else {
                         Toast.makeText(CommunityLoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
@@ -91,6 +82,12 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
             }
         });
     }
+
+    public void goToRegister(View view){
+        Intent intent = new Intent(getApplicationContext(), CommunityMainActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -119,6 +116,18 @@ public class CommunityLoginActivity  extends AppCompatActivity implements onClic
     protected void onDestroy() {
         super.onDestroy();
         Log.e(LOG, "onDestroy");
+    }
+
+    public void saveData(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean(S1, s1.isChecked());
+        editor.apply();
+    }
+
+    public boolean loadData(){
+        SharedPreferences sp = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        return sp.getBoolean(S1,false);
     }
 
 }

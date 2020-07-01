@@ -2,6 +2,7 @@ package com.sfac.AGlobalVoiceForAutism;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.sfac.AGlobalVoiceForAutism.activities.CommunityLoginActivity;
 
 public class CommunityActivity extends AppCompatActivity {
     private static final String LOG = CommunityActivity.class.getName();
@@ -80,5 +83,11 @@ public class CommunityActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.e(LOG, "onDestroy");
+    }
+
+    public void enableFilters(View view){
+        Intent intent = new Intent(this, CommunityLoginActivity.class);
+        intent.putExtra("filter_on",1);
+        startActivity(intent);
     }
 }
