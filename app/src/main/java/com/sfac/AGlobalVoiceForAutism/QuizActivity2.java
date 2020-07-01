@@ -61,7 +61,6 @@ public class QuizActivity2 extends AppCompatActivity {
                 Log.e("OnFirstOptionClicked",task.getQuestionNumber()+"option1" );
                 int num = Integer.parseInt(task.getQuestionNumber());
                 verified[num] = 1;
-                Toast.makeText(context, num +" "+1 ,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -69,7 +68,6 @@ public class QuizActivity2 extends AppCompatActivity {
                 Log.e("OnSecondOptionClicked",task.getQuestionNumber()+"option2");
                 int num = Integer.parseInt(task.getQuestionNumber());
                 verified[num] = 2;
-                Toast.makeText(context, num +" "+2 ,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -77,7 +75,6 @@ public class QuizActivity2 extends AppCompatActivity {
                Log.e("OnThirdOptionClicked",task.getQuestionNumber()+"option3");
                 int num = Integer.parseInt(task.getQuestionNumber());
                 verified[num] = 3;
-                Toast.makeText(context, num +" "+3 ,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -85,8 +82,6 @@ public class QuizActivity2 extends AppCompatActivity {
                 Log.e("OnFourthOptionClicked",task.getQuestionNumber()+"option4");
                 int num = Integer.parseInt(task.getQuestionNumber());
                 verified[num] = 4;
-                Toast.makeText(context, num +" "+4 ,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(context, verified.length,Toast.LENGTH_SHORT);
             }
         });
         uploadButton.setOnClickListener(new View.OnClickListener() {
