@@ -48,5 +48,16 @@
         app:srcCompat="@drawable/local_com"
         tools:ignore="VectorDrawableCompat" />
 
+    <Button
+        android:id="@+id/enableFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/backgroundColor"
+        android:gravity="center_horizontal"
+        android:onClick="enableFilters"
+        android:text="@string/enable_filter"
+        android:textSize="10dp" />
+
 
 </LinearLayout>

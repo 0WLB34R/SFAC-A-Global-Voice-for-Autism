@@ -1,7 +1,5 @@
 package com.sfac.AGlobalVoiceForAutism;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.sfac.AGlobalVoiceForAutism.activities.CommunityLoginActivity;
 import com.sfac.AGlobalVoiceForAutism.activities.CommunityMainActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentCommunityRegistration = new Intent(context, CommunityMainActivity.class);
+                Intent intentCommunityRegistration = new Intent(context, CommunityLoginActivity.class);
+                intentCommunityRegistration.putExtra("filter_on",0);
                 startActivity(intentCommunityRegistration);
             }
         });
