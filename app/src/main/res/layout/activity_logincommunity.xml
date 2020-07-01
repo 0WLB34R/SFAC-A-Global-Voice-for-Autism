@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/secureimage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         app:srcCompat="@drawable/user">
 
     </ImageView>
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/secureimage"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/Username"
         android:textColor="#1E1C1C"
         android:textColorHighlight="#E61919"
@@ -55,8 +55,8 @@
         android:id="@+id/signinlog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordlog"
-        android:layout_marginTop="48dp"
+        android:layout_below="@+id/disablefilter"
+        android:layout_marginTop="10dp"
         android:background="#FFC107"
         android:text="@string/sign_in">
 
