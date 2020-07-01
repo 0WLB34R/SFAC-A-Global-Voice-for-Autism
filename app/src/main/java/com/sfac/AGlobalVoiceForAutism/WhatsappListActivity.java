@@ -56,7 +56,9 @@ public class WhatsappListActivity extends AppCompatActivity {
             public void onGroupClicked(Whatsapp task) {
                 Intent wpp = new Intent(Intent.ACTION_VIEW);
                 wpp.setData(Uri.parse(task.getUrl()));
-                startActivity(wpp);
+                if(wpp.resolveActivity(getPackageManager())!=null){
+                    startActivity(wpp);
+                }
             }
         });
     }
