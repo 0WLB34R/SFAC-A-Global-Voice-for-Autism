@@ -53,6 +53,14 @@ public class WhatsappRecyclerViewAdapter extends RecyclerView.Adapter<WhatsappVi
                     callBack.onGroupClicked(Whatsapp);                }
             }
         });
+        holder.icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (callBack != null) {
+                    callBack.onGroupClicked(Whatsapp);
+                }
+            }
+        });
     }
 
     @Override
