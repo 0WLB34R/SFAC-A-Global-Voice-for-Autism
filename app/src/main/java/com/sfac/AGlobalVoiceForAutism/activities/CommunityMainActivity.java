@@ -84,6 +84,7 @@ public class CommunityMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CommunityLoginActivity.class);
+                intent.putExtra("filter_on",0);
                 startActivity(intent);
             }
         });
