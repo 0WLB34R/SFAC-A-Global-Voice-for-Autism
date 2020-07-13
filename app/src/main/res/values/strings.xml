@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AGVFA</string>
-    <string name="loading">loading</string>
+    <string name="extra">Extra</string>
+    <string name="loading">Loading</string>
     <string name="com_section">Community</string>
     <string name="edu_section">Education</string>
     <string name="about_us_section">About us</string>
@@ -23,6 +24,7 @@
     <string name="download">Download</string>
     <string name="take_quiz">Take Quiz !</string>
     <string name="video_menu">Videos menu</string>
+    <string name="summit_answers">Upload Answers</string>
     <string name="who_we_are">A Global Voice for Autism brings together teams of autism
         professionals, trauma specialists and local community experts to train key community
         stakeholders in the skills to support and include autistic children and children whose lives
@@ -42,4 +44,25 @@
         simply been born somewhere else. A Global Voice for Autism was founded on the principle that
         ALL autistic children should have access to education, community and support, no matter
         where they live."</string>
+    <string name ="welcome_to_the_community_here_you_can_join_us_in_our_different_social_media_groups_and_keep_in_touch_for_new_updates_share_experiences_and_build_a_stronger_community_this_area_is_intended_to_be_just_for_parents_if_its_your_first_time_here_please_sign_up_enjoy_the_experience" translatable="false">
+        welcome to the community here you can join us in our different social media groups and keep
+        in touch for new updates share experiences and build a stronger community this area is intended to be just for parents if
+        its your first time here please sign up enjoy the experience
+       </string>
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="confirm_your_password">Confirm your Password</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="age">Age</string>
+    <string name="country">Country</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="already_registered_sign_in_here">Already registered? Sign In here</string>
+    <string name="disable_filter">Disable Filter</string>
+    <string name="enable_filter">Enable Filter</string>
+    <string name="sign_in">Sign In</string>
+    <string name="Username"> Username</string>
+    <string name="Password">Password</string>
+    <string name="INCLUDE2020" />
+
 </resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.CommunityLoginActivity">
+
+    <ImageView
+        android:id="@+id/secureimage"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:srcCompat="@drawable/user">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/usernamelog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secureimage"
+        android:layout_marginTop="10dp"
+        android:hint="@string/Username"
+        android:textColor="#1E1C1C"
+        android:textColorHighlight="#E61919"
+        >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/passwordlog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Password"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/usernamelog"
+       >
+
+    </EditText>
+    <Switch
+        android:id="@+id/disablefilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/disable_filter"
+        android:gravity="center_horizontal"
+        android:textSize="16dp"
+        android:layout_below="@id/passwordlog">
+
+    </Switch>
+
+    <Button
+        android:id="@+id/signinlog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disablefilter"
+        android:layout_marginTop="10dp"
+        android:background="#FFC107"
+        android:text="@string/sign_in">
+
+    </Button>
+
+    <Button
+        android:id="@+id/toRegistre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signinlog"
+        android:layout_marginTop="10dp"
+        android:background="#FFC107"
+        android:onClick="goToRegister"
+        android:text="@string/register">
+
+    </Button>
+
+</RelativeLayout>

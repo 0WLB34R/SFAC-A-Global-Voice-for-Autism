@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_xhdpi"
-        android:label="@string/app_name"
+        android:label="INCLUDE20"
         android:roundIcon="@mipmap/ic_launcher_xhdpi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,12 +19,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CommunityMainActivity"
+            android:label="CommunityRegisterPage"
+            android:parentActivityName=".CommunityActivity"/>
+        <activity
+            android:name=".activities.CommunityLoginActivity"
+            android:label="CommunityLogInPage"
+            android:parentActivityName=".CommunityActivity"/>
         <activity
             android:name=".CommunityActivity"
             android:label="@string/com_section"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WhatsappListActivity"
+            android:label="Whatsapp List"
+            android:parentActivityName=".CommunityActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VideoActivity"
@@ -41,8 +55,8 @@
             android:label="@string/about_us_section"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".PopUpVideoActivity"
+        <activity
+            android:name=".PopUpVideoActivity"
             android:label="@string/extra_videos"
             android:parentActivityName=".VideoListActivity"
             android:screenOrientation="portrait" />
@@ -51,6 +65,23 @@
             android:label="@string/quiz"
             android:parentActivityName=".VideoListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizActivity2"
+            android:label="@string/quiz"
+            android:parentActivityName=".VideoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HardcodedVideoActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="Offline Videos"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="Results"
+            android:parentActivityName=".VideoListActivity"
+            android:screenOrientation="portrait"/>
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

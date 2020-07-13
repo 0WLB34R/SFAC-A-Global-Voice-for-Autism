@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.sfac.AGlobalVoiceForAutism.model.ActivitiesItem;
 import com.sfac.AGlobalVoiceForAutism.repository.VideoRepository;
+import com.sfac.AGlobalVoiceForAutism.sql.DataBaseHelperVideos;
 import com.sfac.AGlobalVoiceForAutism.utils.Constants;
 
 import java.security.Principal;
@@ -117,6 +118,10 @@ public class PopUpVideoActivity extends AppCompatActivity {
             Toast.makeText(context,getString(R.string.not_valid_video),Toast.LENGTH_SHORT).show();
             return;
         }
+        DataBaseHelperVideos mDataBaseHelperVideos =  new DataBaseHelperVideos(this);
+        if(!mDataBaseHelperVideos.checkVid(idVideo)){
+                    mDataBaseHelperVideos.addData(idVideo, nameVideo);
+                }
         Intent intentVideo = new Intent(context, VideoActivity.class);
         String videoString = new Gson().toJson(extraVideo);
         intentVideo.putExtra(Constants.INTENT_KEY_ACTIVITY,videoString);

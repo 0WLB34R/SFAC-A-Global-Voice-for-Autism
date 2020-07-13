@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 public class SplashActivity extends AppCompatActivity {
@@ -41,17 +39,17 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(350);
-                    updateProgress(20);
+                    Thread.sleep(550);
+                    updateProgress(30);
 
-                    Thread.sleep(350);
+                    Thread.sleep(450);
                     updateProgress(40);
 
                     Thread.sleep(350);
                     updateProgress(60);
 
-                    Thread.sleep(270);
-                    updateProgress(70);
+                    Thread.sleep(470);
+                    updateProgress(80);
 
                     Thread.sleep(1180);
                     updateProgress(99);
@@ -70,6 +68,35 @@ public class SplashActivity extends AppCompatActivity {
                 progressBar.setProgress(progress);
             }
         });
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(LOG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(LOG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LOG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(LOG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(LOG, "onDestroy");
     }
 }
 

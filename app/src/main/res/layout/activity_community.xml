@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:padding="30dp"
     android:background="#E3F2D2"
+    tools:context=".CommunityActivity"
     >
 
 
@@ -18,7 +19,8 @@
         android:layout_weight="1"
         android:background="#E3F2D2"
         android:scaleType="fitCenter"
-        android:paddingBottom="10dp"
+        android:onClick="toFacebook"
+        android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/facebook"
         tools:ignore="VectorDrawableCompat" />
 
@@ -29,19 +31,10 @@
         android:layout_weight="1"
         android:scaleType="fitCenter"
         android:background="#E3F2D2"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/whatsapp"
         tools:ignore="VectorDrawableCompat" />
-    <ImageButton
-        android:id="@+id/zButton"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="fitCenter"
-        android:background="#E3F2D2"
-        android:paddingBottom="10dp"
-        app:srcCompat="@drawable/zoom"
-        tools:ignore="VectorDrawableCompat" />
+
 
     <ImageButton
         android:id="@+id/loButton"
@@ -50,9 +43,21 @@
         android:layout_weight="1"
         android:background="#E3F2D2"
         android:scaleType="fitCenter"
-        android:paddingBottom="10dp"
+        android:onClick="toLocalorg"
+        android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/local_com"
         tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/enableFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/backgroundColor"
+        android:gravity="center_horizontal"
+        android:onClick="enableFilters"
+        android:text="@string/enable_filter"
+        android:textSize="10dp" />
 
 
 </LinearLayout>

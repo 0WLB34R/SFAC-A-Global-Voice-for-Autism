@@ -12,10 +12,14 @@ public class ActivitiesItem {
     @Expose
     private String name;
 
+    @Expose
+    private int num;
+
     private int icon_video;
     private String Lessons;
 
-    public ActivitiesItem(String id,String name,String extention,String Lessons, int icon_video) {
+    public ActivitiesItem(int num,String id,String name,String extention,String Lessons, int icon_video) {
+    this.num = num;
     this.id = id;
     this.Lessons = Lessons;
     this.icon_video = icon_video;
@@ -42,4 +46,9 @@ public class ActivitiesItem {
     public String getName() { return name; }
 
     public void setName(String name) { this.name = name; }
+
+    public int getNum() { return num; }
+
+    public void setNum(int num) { this.num = num; }
+
 }

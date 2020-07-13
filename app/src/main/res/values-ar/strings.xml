@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AGVFA</string>
+    <string name="extra">إضافي</string>
     <string name="com_section">الجماعة</string>
     <string name="loading">تحميل</string>
     <string name="video_section">شغل الفيديو</string>
@@ -26,4 +27,20 @@
     <string name="download">تحميل</string>
     <string name="take_quiz">تقدم للإختبار !</string>
     <string name="video_menu">قائمة مقاطع الفيديو</string>
+    <string name="summit_answers">تحميل الإجابات</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمه السر</string>
+    <string name="confirm_your_password">كد رقمك السري</string>
+    <string name="enter_your_full_name">أدخل اسمك الكامل</string>
+    <string name="age">عمر</string>
+    <string name="country">بلد</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="register">لبريد الإلكتروني</string>ا
+    <string name="already_registered_sign_in_here">مسجل بالفعل؟ تسجيل الدخول هنا</string>
+    <string name="disable_filter">مرشح تعطيل</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="Username">سم المستخدم </string>
+    <string name="enable_filter">تمكين التصفية </string>
+    <string name="Password">كلمه الس</string>
+    <string name="INCLUDE2020"> كلمه ال</string>
 </resources>
