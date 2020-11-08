@@ -11,19 +11,21 @@ public class VideoListSingleton {
     public ArrayList<ActivitiesItem> activityItems=new ArrayList<ActivitiesItem>();
     private Context context;
 
-    private VideoListSingleton(Context c){
+    private VideoListSingleton(Context c){ //Her goes hardcoded videos
         activityItems.add(new ActivitiesItem(1,"Hardcoded","lesson_one",
                 ".jpg",  c.getString(R.string.lesson_section)+" 1",R.drawable.activities));
-        activityItems.add(new ActivitiesItem(2,"vSYadh2xmcI","ElmoLittle",
-                ".jpg", c.getString(R.string.lesson_section)+" 2",R.drawable.elmo_1));
-        activityItems.add(new ActivitiesItem(3,"MeO8VIx-jXA","Elmo",
-                ".jpg", c.getString(R.string.lesson_section)+" 3",R.drawable.elmo_2));
-        activityItems.add(new ActivitiesItem(4,"4","Video_4",
-                ".jpg", c.getString(R.string.lesson_section)+" 4",R.drawable.worksheet));
-        activityItems.add(new ActivitiesItem(5,"5","Video_5",
-                ".jpg", c.getString(R.string.lesson_section)+" 5",R.drawable.activities));
-        activityItems.add(new ActivitiesItem(6,"6","Video_6",
-                ".jpg", c.getString(R.string.lesson_section)+" 6",R.drawable.worksheet));
+        activityItems.add(new ActivitiesItem(2,"Hardcoded","academicmaram1ar_matchboxlettersfinal",
+                ".jpg",  c.getString(R.string.lesson_section)+" 2",R.drawable.activities));
+        activityItems.add(new ActivitiesItem(3,"https://drive.google.com/file/d/1Qcky-vorWo5I5lR6afe13Zcr8acT66Wc/view","ElmoLittle",
+                ".jpg", c.getString(R.string.lesson_section)+" 3",R.drawable.elmo_1));
+        activityItems.add(new ActivitiesItem(4,"MeO8VIx-jXA","Elmo",
+                ".jpg", c.getString(R.string.lesson_section)+" 4",R.drawable.elmo_2));
+        activityItems.add(new ActivitiesItem(5,"5","Video_4",
+                ".jpg", c.getString(R.string.lesson_section)+" 5",R.drawable.worksheet));
+        activityItems.add(new ActivitiesItem(6,"6","Video_5",
+                ".jpg", c.getString(R.string.lesson_section)+" 6",R.drawable.activities));
+        activityItems.add(new ActivitiesItem(7,"7","Video_6",
+                ".jpg", c.getString(R.string.lesson_section)+" 7",R.drawable.worksheet));
     }
     public static VideoListSingleton getInstance(Context c){
         if (instance == null)

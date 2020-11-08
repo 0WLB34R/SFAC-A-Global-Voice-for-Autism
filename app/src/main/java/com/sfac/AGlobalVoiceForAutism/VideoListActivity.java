@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -70,17 +71,20 @@ public class VideoListActivity extends AppCompatActivity {
                   videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
                   startActivity(videoIntent);
               }else if(loadData()){
-                  videoIntent = new Intent(context, VideoActivity.class);
-                  String videoString = new Gson().toJson(task);
-                  videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
-                  startActivity(videoIntent);
+                    Uri uri = Uri.parse(task.getId()); // missing 'http://' will cause crashed
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+//                  videoIntent = new Intent(context, VideoActivity.class); Old Code
+//                  String videoString = new Gson().toJson(task);
+//                  videoIntent.putExtra(Constants.INTENT_KEY_ACTIVITY, videoString);
+//                  startActivity(videoIntent);
               }else{
                   Toast.makeText(context, "Videos Not Unlocked Yet!",
                           Toast.LENGTH_LONG).show();
               }
            }
            @Override
-            public void onTaskQuizClicked(ActivitiesItem task) {
+            public void onTaskQuizClicked(ActivitiesItem task) {            //Need to check this works
                 Log.e("OnTaskClicked",task.getLessons()+"Quiz");
                 Intent quizactivity;
                 if(task.getId().equals("Hardcoded")){
