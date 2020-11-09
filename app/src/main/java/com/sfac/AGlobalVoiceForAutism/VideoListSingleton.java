@@ -16,7 +16,7 @@ public class VideoListSingleton {
                 ".jpg",  c.getString(R.string.lesson_section)+" 1",R.drawable.activities));
         activityItems.add(new ActivitiesItem(2,"Hardcoded","academicmaram1ar_matchboxlettersfinal",
                 ".jpg",  c.getString(R.string.lesson_section)+" 2",R.drawable.activities));
-        activityItems.add(new ActivitiesItem(3,"https://drive.google.com/file/d/1Qcky-vorWo5I5lR6afe13Zcr8acT66Wc/view","ElmoLittle",
+        activityItems.add(new ActivitiesItem(3,"https://drive.google.com/file/d/1XECdttVGthdVUwT31sjYo1AaxHcj3oyt/view?usp=sharing","DivisionBoard",
                 ".jpg", c.getString(R.string.lesson_section)+" 3",R.drawable.elmo_1));
         activityItems.add(new ActivitiesItem(4,"MeO8VIx-jXA","Elmo",
                 ".jpg", c.getString(R.string.lesson_section)+" 4",R.drawable.elmo_2));
